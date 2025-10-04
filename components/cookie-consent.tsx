@@ -5,11 +5,17 @@ import Link from "next/link"
 
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false)
+  const [showPrefs, setShowPrefs] = useState(false)
+  const [prefs, setPrefs] = useState({ analytics: true, marketing: false })
   const bannerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     try {
       const stored = localStorage.getItem("cmt_cookie_consent")
+      const storedPrefs = localStorage.getItem("cmt_cookie_preferences")
+      if (storedPrefs) {
+        try { setPrefs(JSON.parse(storedPrefs)) } catch (e) {}
+      }
       if (!stored) {
         // show popup after small delay
         setTimeout(() => setIsVisible(true), 600)
@@ -36,6 +42,7 @@ export default function CookieConsent() {
   const reject = () => {
     try {
       localStorage.setItem("cmt_cookie_consent", "rejected")
+      localStorage.setItem("cmt_cookie_preferences", JSON.stringify({ analytics: false, marketing: false }))
     } catch (e) {}
     setIsVisible(false)
   }
@@ -66,11 +73,65 @@ export default function CookieConsent() {
           </div>
 
           <div className="flex items-center gap-2 justify-end">
-            <Link href="/cookie" className="text-sm underline text-foreground">Gestisci</Link>
+            <button onClick={() => setShowPrefs(true)} className="text-sm underline text-foreground">Preferenze</button>
             <button data-primary onClick={reject} className="px-3 py-2 rounded-md border border-input bg-transparent text-foreground text-sm">Rifiuta</button>
             <button onClick={accept} className="px-3 py-2 rounded-md bg-primary text-primary-foreground text-sm">Accetta</button>
           </div>
         </div>
+
+        {/* Preferences modal inline */}
+        {showPrefs && (
+          <div className="mt-4 border-t border-border pt-4">
+            <h4 className="font-medium text-foreground mb-2">Preferenze Cookie</h4>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-3">
+              <div className="flex items-center justify-between w-full">
+                <div>
+                  <p className="font-medium">Analytics</p>
+                  <p className="text-xs text-muted-foreground">Cookie per statistiche e miglioramento del sito.</p>
+                </div>
+                <label className="inline-flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={prefs.analytics}
+                    onChange={(e) => setPrefs((p) => ({ ...p, analytics: e.target.checked }))}
+                  />
+                </label>
+              </div>
+
+              <div className="flex items-center justify-between w-full">
+                <div>
+                  <p className="font-medium">Marketing</p>
+                  <p className="text-xs text-muted-foreground">Cookie per pubblicità e profilazione.</p>
+                </div>
+                <label className="inline-flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    checked={prefs.marketing}
+                    onChange={(e) => setPrefs((p) => ({ ...p, marketing: e.target.checked }))}
+                  />
+                </label>
+              </div>
+
+              <div className="flex gap-2 mt-2 sm:mt-0">
+                <button
+                  onClick={() => {
+                    try { localStorage.setItem("cmt_cookie_preferences", JSON.stringify(prefs)); localStorage.setItem("cmt_cookie_consent", "accepted") } catch (e) {}
+                    setShowPrefs(false); setIsVisible(false)
+                  }}
+                  className="px-3 py-2 rounded-md bg-primary text-primary-foreground"
+                >
+                  Salva preferenze
+                </button>
+                <button
+                  onClick={() => setShowPrefs(false)}
+                  className="px-3 py-2 rounded-md border border-input bg-transparent"
+                >
+                  Annulla
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       <style jsx>{`
         .animate-slide-up{ animation: slideUp 280ms ease-out forwards }
