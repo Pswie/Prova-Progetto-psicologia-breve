@@ -16,7 +16,7 @@ const professionisti = [
     titolo: "Psicologo, Counsellor, Psicoterapeuta",
     specializzazione: "Specialista in Psicologia Clinica",
     citta: "Roma",
-    immagine: "/psychologist-portrait.png",
+    immagine: "/busio.jpg",
     ruolo: "Responsabile Rete Counselling CMT",
   },
   {
@@ -25,7 +25,7 @@ const professionisti = [
     titolo: "Psicologa Clinica, Psicoterapeuta",
     specializzazione: "Specialista in Psicologia Clinica",
     citta: "Milano",
-    immagine: "/roberta-alesiani-portrait.png",
+    immagine: "/roberta alesiani.jpg",
     ruolo: "Socio SPR e SFPRG",
   },
   {
@@ -34,7 +34,7 @@ const professionisti = [
     titolo: "Psicoterapeuta Psicodinamica",
     specializzazione: "Dottore di Ricerca in Psicologia",
     citta: "Roma",
-    immagine: "/federica-genova-portrait.png",
+    immagine: "/federica genova.jpg",
     ruolo: "Socio AIP, SPR, SFPRG",
   },
   {
@@ -43,7 +43,7 @@ const professionisti = [
     titolo: "Psicologa, Esperta in Psicodiagnosi",
     specializzazione: "Specializzanda in Psicologia Clinica",
     citta: "Roma",
-    immagine: "/martina-calabro-portrait.png",
+    immagine: "/martina.jpg",
     ruolo: "Psicologo clinico/consulente",
   },
   {
@@ -52,7 +52,7 @@ const professionisti = [
     titolo: "Psicologo",
     specializzazione: "Specializzando in Psicoterapia",
     citta: "Roma",
-    immagine: "/emanuele-dammando-portrait.png",
+    immagine: "/emanuele.jpg",
     ruolo: "Psicologo clinico/consulente",
   },
   {
@@ -61,7 +61,7 @@ const professionisti = [
     titolo: "Psicologa",
     specializzazione: "Specializzanda in Psicoterapia",
     citta: "Roma",
-    immagine: "/giorgia-abate-portrait.png",
+    immagine: "/giorgia.jpg",
     ruolo: "Compagno Adulto",
   },
 ]
