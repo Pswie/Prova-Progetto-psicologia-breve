@@ -73,16 +73,31 @@ export default function ArticoliClientPage({ categories, articles }: ArticoliCli
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap justify-center gap-3 mb-8"
           >
-            {categories.map((category, index) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                className="rounded-full"
-                onClick={() => setSelectedCategory(category)}
+            {categories.length <= 6 ? (
+              categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  className="rounded-full"
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </Button>
+              ))
+            ) : (
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="border bg-background rounded-full px-4 py-2 text-sm"
+                aria-label="Seleziona categoria"
               >
-                {category}
-              </Button>
-            ))}
+                {categories.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            )}
           </motion.div>
 
           {/* Search */}

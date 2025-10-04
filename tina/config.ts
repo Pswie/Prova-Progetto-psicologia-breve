@@ -70,24 +70,7 @@ export default defineConfig({
             type: "string",
             name: "category",
             label: "Categoria",
-            options: [
-              {
-                value: "Teoria",
-                label: "Teoria",
-              },
-              {
-                value: "Ricerca",
-                label: "Ricerca",
-              },
-              {
-                value: "Approfondimenti",
-                label: "Approfondimenti",
-              },
-              {
-                value: "Servizi",
-                label: "Servizi",
-              },
-            ],
+            description: "Inserisci una categoria libera. Se desideri organizzare le categorie, scrivile coerentemente.",
             required: true,
           },
           {
