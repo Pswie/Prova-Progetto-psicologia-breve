@@ -72,7 +72,7 @@ export default function AuthorBox({ author, showFull = false }: AuthorBoxProps) 
                 className="w-16 h-16 rounded-full object-cover"
               />
             ) : (
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+              <div className="w-16 h-16 bg-primary/10 [background-color:rgba(var(--primary-rgb)/0.1)] rounded-full flex items-center justify-center">
                 <User className="h-8 w-8 text-primary" />
               </div>
             )}
@@ -80,7 +80,7 @@ export default function AuthorBox({ author, showFull = false }: AuthorBoxProps) 
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <h3 className="text-lg font-semibold text-foreground">{author.name}</h3>
-                <Badge variant="secondary" className="bg-primary/10 text-primary">
+                <Badge variant="secondary" className="bg-primary/10 [background-color:rgba(var(--primary-rgb)/0.1)] text-primary">
                   <Award className="h-3 w-3 mr-1" />
                   Verificato
                 </Badge>

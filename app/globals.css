@@ -13,8 +13,13 @@
   --popover-foreground: oklch(0.15 0.02 120);
   --primary: oklch(0.75 0.15 135); /* Verde CMT #89d692 */
   --primary-foreground: oklch(0.98 0.01 120);
+  /* Fallback sRGB values for better compatibility (especially iOS/Safari) */
+  --primary-rgb: 137, 214, 146; /* #89d692 */
+  --primary-foreground-rgb: 250, 250, 250; /* approx for light foreground */
   --secondary: oklch(0.82 0.12 75); /* Arancione CMT #e3aa5c */
   --secondary-foreground: oklch(0.15 0.02 120);
+  --secondary-rgb: 227, 170, 92; /* #e3aa5c */
+  --secondary-foreground-rgb: 38, 38, 38; /* approx for dark foreground */
   --muted: oklch(0.96 0.01 120);
   --muted-foreground: oklch(0.55 0.02 120);
   --accent: oklch(0.82 0.12 75);
@@ -49,8 +54,13 @@
   --popover-foreground: oklch(0.95 0.01 120);
   --primary: oklch(0.75 0.15 135);
   --primary-foreground: oklch(0.08 0.01 120);
+  /* Fallback sRGB values for dark theme */
+  --primary-rgb: 137, 214, 146; /* keep same hue */
+  --primary-foreground-rgb: 20, 20, 20;
   --secondary: oklch(0.82 0.12 75);
   --secondary-foreground: oklch(0.08 0.01 120);
+  --secondary-rgb: 227, 170, 92;
+  --secondary-foreground-rgb: 20, 20, 20;
   --muted: oklch(0.18 0.01 120);
   --muted-foreground: oklch(0.65 0.02 120);
   --accent: oklch(0.82 0.12 75);
