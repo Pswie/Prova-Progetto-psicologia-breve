@@ -164,6 +164,12 @@ Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicolo
     ],
   },
 }; // <-- ERRORE CORRETTO: Aggiunta la parentesi graffa e il punto e virgola
+// NUOVA FUNZIONE AGGIUNTA QUI
+export async function generateStaticParams() {
+  return Object.keys(professionistiData).map((slug) => ({
+    slug: slug,
+  }));
+}
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const professionista = professionistiData[params.slug]
@@ -190,6 +196,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function ProfessionistiPage({ params }: { params: { slug: string } }) {
   const professionista = professionistiData[params.slug]
+
+  // Se per qualche motivo lo slug non viene trovato, mostra una pagina non trovata
+  if (!professionista) {
+    // Per una gestione migliore, potresti usare la funzione notFound() di Next.js
+   return <div>Professionista non trovato.</div>;
+  }
 
   const personSchema = {
     "@context": "https://schema.org",
