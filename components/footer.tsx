@@ -26,6 +26,18 @@ export default function Footer() {
                 Servizi
               </Link>
               <Link
+                href="/cookie"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Cookie
+              </Link>
+              <Link
+                href="/privacy"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Privacy
+              </Link>
+              <Link
                 href="/articoli"
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors"
               >

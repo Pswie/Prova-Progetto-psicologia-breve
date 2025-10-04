@@ -7,7 +7,7 @@ export default function PrivacyPage() {
     <>
       <Navigation />
       <main className="max-w-4xl mx-auto p-6 mt-20 prose">
-        <h1>Informativa Privacy</h1>
+  <h1>Privacy</h1>
 
         <h2>Titolare del Trattamento dei Dati</h2>
         <p>
