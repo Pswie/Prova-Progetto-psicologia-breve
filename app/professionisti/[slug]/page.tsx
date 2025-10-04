@@ -38,167 +38,131 @@ Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicolo
       "Psicologia Clinica",
     ],
   },
-  "maria-rossi": {
-    nome: "Maria Rossi",
-    titolo: "Psicologa, Psicoterapeuta",
-    specializzazione: "Specialista in Psicoterapia Cognitiva",
-    ruolo: "Membro CMT Italian Group",
+"roberta-alesiani": {
+    nome: "Roberta Alesiani",
+    titolo: "Psicologa Clinica, Psicoterapeuta",
+    specializzazione: "Specialista in Psicologia Clinica e Psicoterapia",
+    ruolo: "Socio SPR e SFPRG",
     citta: "Milano",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/female-psychologist-portrait.png",
-    bio: `Maria Rossi è psicologa e psicoterapeuta specializzata in psicoterapia cognitiva con particolare focus sulla Control Mastery Theory. Lavora a Milano dal 2015 e offre sia consulenze in studio che online.
-
-Ha conseguito la specializzazione in Psicoterapia Cognitiva e ha approfondito la sua formazione con corsi avanzati sulla CMT presso il San Francisco Psychotherapy Research Group.`,
+    immagine: "/roberta-alesiani-portrait.png",
+    bio: `Roberta Alesiani, psicologa clinica e psicoterapeuta; lavora da anni come Psicoterapeuta Consulente presso il Servizio di Psicologia Clinica e Psicoterapia dell’Ospedale San Raffaele-Turro e presso il servizio di Medicina Occupazionale, H San Raffaele Resnati.\n\nSocio della International Society for Psychotherapy Research (SPR) e del San Francisco Psychotherapy Research Group (SFPRG); è autore di diversi articoli scientifici pubblicati su riviste nazionali e internazionali. Riceve a Milano e on-line.`,
     formazione: [
-      "Laurea in Psicologia - Università degli Studi di Milano",
-      "Specializzazione in Psicoterapia Cognitiva",
-      "Formazione avanzata in Control Mastery Theory",
-      "Master in Psicologia Clinica",
+      "Laurea in Psicologia Clinica",
+      "Specializzazione in Psicoterapia"
     ],
     esperienza: [
-      "Dal 2015: Psicoterapeuta privato a Milano",
-      "Membro del Control Mastery Theory Italian Group",
-      "Esperienza in psicoterapia breve e counselling",
-      "Consulenze online e in presenza",
-    ],
-    areeSpecializzazione: [
-      "Psicoterapia Cognitiva",
-      "Control Mastery Theory",
-      "Disturbi d'Ansia",
-      "Depressione",
-      "Relazioni Interpersonali",
-    ],
-  },
-  "luca-bianchi": {
-    nome: "Luca Bianchi",
-    titolo: "Psicologo, Psicoterapeuta",
-    specializzazione: "Specialista in Psicologia Clinica",
-    ruolo: "Membro CMT Italian Group",
-    citta: "Roma",
-    email: "counselling@cmt-ig.org",
-    telefono: "340 574 4646",
-    immagine: "/male-psychologist-portrait.png",
-    bio: `Luca Bianchi è psicologo e psicoterapeuta specializzato in psicologia clinica. Lavora a Roma e si occupa principalmente di psicoterapia breve secondo il modello della Control Mastery Theory.
-
-Ha una lunga esperienza nel trattamento di disturbi d'ansia, depressione e problematiche relazionali. Offre consulenze sia in studio che online.`,
-    formazione: [
-      "Laurea in Psicologia - Università Sapienza di Roma",
-      "Specializzazione in Psicologia Clinica",
-      "Formazione in Control Mastery Theory",
-      "Corso avanzato in Psicoterapia Breve",
-    ],
-    esperienza: [
-      "Dal 2013: Psicoterapeuta privato a Roma",
-      "Membro del Control Mastery Theory Italian Group",
-      "Esperienza in psicoterapia individuale e di coppia",
-      "Consulenze online e in presenza",
+      "Psicoterapeuta Consulente presso Ospedale San Raffaele-Turro",
+      "Consulente presso Medicina Occupazionale, H San Raffaele Resnati",
+      "Socio della International Society for Psychotherapy Research (SPR)",
+      "Socio del San Francisco Psychotherapy Research Group (SFPRG)",
+      "Autore di articoli scientifici nazionali e internazionali"
     ],
     areeSpecializzazione: [
       "Psicologia Clinica",
-      "Control Mastery Theory",
-      "Psicoterapia Breve",
-      "Terapia di Coppia",
-      "Disturbi d'Ansia",
+      "Psicoterapia",
+      "Ricerca in Psicoterapia"
     ],
   },
-  "anna-ferrari": {
-    nome: "Anna Ferrari",
-    titolo: "Psicologa, Counsellor",
-    specializzazione: "Specialista in Psicologia del Lavoro",
-    ruolo: "Membro CMT Italian Group",
-    citta: "Milano",
+  "federica-genova": {
+    nome: "Federica Genova",
+    titolo: "Psicoterapeuta Psicodinamica",
+    specializzazione: "Dottore di Ricerca in Psicologia Dinamica e Clinica",
+    ruolo: "Socio AIP, SPR, SFPRG",
+    citta: "Roma",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/professional-female-therapist.png",
-    bio: `Anna Ferrari è psicologa e counsellor specializzata in psicologia del lavoro. Lavora a Milano e si occupa di counselling psicologico secondo il modello della Control Mastery Theory.
-
-Ha una particolare esperienza nel supporto a professionisti e manager che affrontano stress lavorativo, burnout e difficoltà relazionali in ambito professionale.`,
+    immagine: "/federica-genova-portrait.png",
+    bio: `Federica Genova, psicoterapeuta psicodinamica, dottore di ricerca in Psicologia Dinamica e Clinica presso il Dipartimento di Psicologia Dinamica e Clinica, Facoltà di Medicina e Psicologia, “Sapienza” Università di Roma, è socia dell’Associazione Italiana di Psicologia (AIP), della Society for Psychotherapy Research (SPR) Italy Area Group e del San Francisco Psychotherapy Research Group (SFPRG).\n\nHa scritto vari articoli scientifici pubblicati su riviste nazionali e internazionali e alcuni contributi pubblicati sui volumi Psicoanalisi in trincea e La Personalità e i suoi disturbi. Riceve a Roma e on-line.`,
     formazione: [
-      "Laurea in Psicologia - Università Cattolica di Milano",
-      "Specializzazione in Psicologia del Lavoro",
-      "Formazione in Control Mastery Theory",
-      "Master in Counselling Psicologico",
+      "Dottorato di Ricerca in Psicologia Dinamica e Clinica - Sapienza Università di Roma",
+      "Specializzazione in Psicoterapia Psicodinamica"
     ],
     esperienza: [
-      "Dal 2016: Counsellor privato a Milano",
-      "Membro del Control Mastery Theory Italian Group",
-      "Esperienza in counselling aziendale",
-      "Consulenze online e in presenza",
+      "Socia dell’Associazione Italiana di Psicologia (AIP)",
+      "Socia della Society for Psychotherapy Research (SPR) Italy Area Group",
+      "Socia del San Francisco Psychotherapy Research Group (SFPRG)",
+      "Autrice di articoli scientifici e contributi a volumi"
     ],
     areeSpecializzazione: [
-      "Psicologia del Lavoro",
-      "Counselling Psicologico",
-      "Control Mastery Theory",
-      "Stress Lavorativo",
-      "Burnout",
+      "Psicoterapia Psicodinamica",
+      "Psicologia Dinamica e Clinica",
+      "Ricerca in Psicologia"
     ],
   },
-  "marco-colombo": {
-    nome: "Marco Colombo",
-    titolo: "Psicologo, Psicoterapeuta",
-    specializzazione: "Specialista in Psicoterapia Breve",
-    ruolo: "Membro CMT Italian Group",
-    citta: "Torino",
+  "martina-calabro": {
+    nome: "Martina Calabrò",
+    titolo: "Psicologa, Esperta in Psicodiagnosi",
+    specializzazione: "Specializzanda in Psicologia Clinica",
+    ruolo: "Psicologo clinico/consulente",
+    citta: "Roma",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/male-therapist-portrait-professional.jpg",
-    bio: `Marco Colombo è psicologo e psicoterapeuta specializzato in psicoterapia breve. Lavora a Torino e applica il modello della Control Mastery Theory nei suoi interventi terapeutici.
-
-Ha una particolare esperienza nel trattamento di disturbi d'ansia, attacchi di panico e fobie. Offre consulenze sia in studio che online.`,
+    immagine: "/martina-calabro-portrait.png",
+    bio: `Martina Calabrò, psicologa, esperta in psicodiagnosi, specializzanda presso la scuola di specializzazione in Psicologia Clinica, Sapienza Università di Roma. Svolge il suo tirocinio presso il Centro di Counselling Psicologico della "Sapienza" Università di Roma, dove svolge attività di psicologo clinico/consulente dal 2017. Lavora privatamente e si occupa di valutazione diagnostica e consulenza clinica per adulti e giovani adulti. Riceve a Roma e on-line.`,
     formazione: [
-      "Laurea in Psicologia - Università di Torino",
-      "Specializzazione in Psicoterapia Breve",
-      "Formazione in Control Mastery Theory",
-      "Corso avanzato in Terapia dei Disturbi d'Ansia",
+      "Laurea in Psicologia",
+      "Specializzanda in Psicologia Clinica - Sapienza Università di Roma",
+      "Formazione in Psicodiagnosi"
     ],
     esperienza: [
-      "Dal 2014: Psicoterapeuta privato a Torino",
-      "Membro del Control Mastery Theory Italian Group",
-      "Esperienza in psicoterapia breve",
-      "Consulenze online e in presenza",
+      "Dal 2017: Psicologo clinico/consulente presso Centro di Counselling Psicologico della Sapienza",
+      "Valutazione diagnostica e consulenza clinica per adulti e giovani adulti"
     ],
     areeSpecializzazione: [
-      "Psicoterapia Breve",
-      "Control Mastery Theory",
-      "Disturbi d'Ansia",
-      "Attacchi di Panico",
-      "Fobie",
+      "Psicodiagnosi",
+      "Consulenza Clinica",
+      "Psicologia Clinica",
+      "Adulti e Giovani Adulti"
     ],
   },
-  "elena-greco": {
-    nome: "Elena Greco",
-    titolo: "Psicologa, Psicoterapeuta",
-    specializzazione: "Specialista in Psicologia Dinamica",
-    ruolo: "Membro CMT Italian Group",
-    citta: "Bologna",
+  "emanuele-dammando": {
+    nome: "Emanuele D'Ammando",
+    titolo: "Psicologo",
+    specializzazione: "Specializzando in Psicoterapia Psicoanalitica",
+    ruolo: "Psicologo clinico/consulente",
+    citta: "Roma",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/female-psychotherapist-portrait.jpg",
-    bio: `Elena Greco è psicologa e psicoterapeuta specializzata in psicologia dinamica. Lavora a Bologna e applica il modello della Control Mastery Theory nei suoi interventi terapeutici.
-
-Ha una particolare esperienza nel trattamento di disturbi dell'umore, depressione e problematiche relazionali. Offre consulenze sia in studio che online.`,
+    immagine: "/emanuele-dammando-portrait.png",
+    bio: `Emanuele D’Ammando, psicologo e specializzando in psicoterapia psicoanalitica presso la SIPRe – Società Italiana di Psicoanalisi della Relazione, Istituto di Roma. Frequentatore scientifico presso il Centro di Counselling Psicologico della "Sapienza" Università di Roma, dove svolge attività di psicologo clinico/consulente dal 2017, sta svolgendo il tirocinio di specializzazione presso l’Ambulatorio Sociale di Psicoterapia Opera Don Calabria. Lavora privatamente a Roma e on-line.`,
     formazione: [
-      "Laurea in Psicologia - Università di Bologna",
-      "Specializzazione in Psicologia Dinamica",
-      "Formazione in Control Mastery Theory",
-      "Master in Psicoterapia Psicodinamica",
+      "Laurea in Psicologia",
+      "Specializzando in Psicoterapia Psicoanalitica - SIPRe Roma"
     ],
     esperienza: [
-      "Dal 2015: Psicoterapeuta privato a Bologna",
-      "Membro del Control Mastery Theory Italian Group",
-      "Esperienza in psicoterapia individuale",
-      "Consulenze online e in presenza",
+      "Dal 2017: Psicologo clinico/consulente presso il Centro di Counselling Psicologico della Sapienza",
+      "Tirocinio presso l’Ambulatorio Sociale di Psicoterapia Opera Don Calabria"
     ],
     areeSpecializzazione: [
-      "Psicologia Dinamica",
-      "Control Mastery Theory",
-      "Disturbi dell'Umore",
-      "Depressione",
-      "Relazioni Interpersonali",
+      "Psicoterapia Psicoanalitica",
+      "Consulenza Clinica",
+      "Psicoanalisi della Relazione"
     ],
   },
-}
+  "giorgia-abate": {
+    nome: "Giorgia Abate",
+    titolo: "Psicologa",
+    specializzazione: "Specializzanda in Psicoterapia Sistemico-Familiare",
+    ruolo: "Compagno Adulto",
+    citta: "Roma",
+    email: "counselling@cmt-ig.org",
+    telefono: "340 574 4646",
+    immagine: "/giorgia-abate-portrait.png",
+    bio: `Giorgia Abate, Psicologa, specializzanda in Psicoterapia Sistemico-Familiare. Svolge attività di Compagno Adulto presso la Cooperativa “Rifornimento in volo”. Riceve a Roma e on-line.`,
+    formazione: [
+      "Laurea in Psicologia",
+      "Specializzanda in Psicoterapia Sistemico-Familiare"
+    ],
+    esperienza: [
+      "Compagno Adulto presso la Cooperativa “Rifornimento in volo”"
+    ],
+    areeSpecializzazione: [
+      "Psicoterapia Sistemico-Familiare",
+      "Supporto a minori e famiglie"
+    ],
+  }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const professionista = professionistiData[params.slug]
