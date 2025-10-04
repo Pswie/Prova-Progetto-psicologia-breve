@@ -12,7 +12,7 @@ const professionistiData: Record<string, any> = {
     citta: "Roma",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/psychologist-portrait.png",
+    immagine: "/busio.jpg",
     bio: `Giuseppe Stefano Biuso, psicologo, counsellor, psicoterapeuta, specialista in Psicologia Clinica. Responsabile Rete Counselling CMT.
 
 Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicologico della "Sapienza" Università di Roma. Dottorando di Ricerca in Psicologia Dinamica e Clinica e Cultore della materia in "Psicosomatica" presso l'università "Sapienza" di Roma.
@@ -46,7 +46,7 @@ Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicolo
     citta: "Milano",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/roberta-alesiani-portrait.png",
+    immagine: "/roberta alesiani.jpg",
     bio: `Roberta Alesiani, psicologa clinica e psicoterapeuta; lavora da anni come Psicoterapeuta Consulente presso il Servizio di Psicologia Clinica e Psicoterapia dell’Ospedale San Raffaele-Turro e presso il servizio di Medicina Occupazionale, H San Raffaele Resnati.\n\nSocio della International Society for Psychotherapy Research (SPR) e del San Francisco Psychotherapy Research Group (SFPRG); è autore di diversi articoli scientifici pubblicati su riviste nazionali e internazionali. Riceve a Milano e on-line.`,
     formazione: [
       "Laurea in Psicologia Clinica",
@@ -73,7 +73,7 @@ Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicolo
     citta: "Roma",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/federica-genova-portrait.png",
+    immagine: "/federica genova.jpg",
     bio: `Federica Genova, psicoterapeuta psicodinamica, dottore di ricerca in Psicologia Dinamica e Clinica presso il Dipartimento di Psicologia Dinamica e Clinica, Facoltà di Medicina e Psicologia, “Sapienza” Università di Roma, è socia dell’Associazione Italiana di Psicologia (AIP), della Society for Psychotherapy Research (SPR) Italy Area Group e del San Francisco Psychotherapy Research Group (SFPRG).\n\nHa scritto vari articoli scientifici pubblicati su riviste nazionali e internazionali e alcuni contributi pubblicati sui volumi Psicoanalisi in trincea e La Personalità e i suoi disturbi. Riceve a Roma e on-line.`,
     formazione: [
       "Dottorato di Ricerca in Psicologia Dinamica e Clinica - Sapienza Università di Roma",
@@ -99,7 +99,7 @@ Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicolo
     citta: "Roma",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/martina-calabro-portrait.png",
+    immagine: "/martina.jpg",
     bio: `Martina Calabrò, psicologa, esperta in psicodiagnosi, specializzanda presso la scuola di specializzazione in Psicologia Clinica, Sapienza Università di Roma. Svolge il suo tirocinio presso il Centro di Counselling Psicologico della "Sapienza" Università di Roma, dove svolge attività di psicologo clinico/consulente dal 2017. Lavora privatamente e si occupa di valutazione diagnostica e consulenza clinica per adulti e giovani adulti. Riceve a Roma e on-line.`,
     formazione: [
       "Laurea in Psicologia",
@@ -125,7 +125,7 @@ Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicolo
     citta: "Roma",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/emanuele-dammando-portrait.png",
+    immagine: "/emanuele.jpg",
     bio: `Emanuele D’Ammando, psicologo e specializzando in psicoterapia psicoanalitica presso la SIPRe – Società Italiana di Psicoanalisi della Relazione, Istituto di Roma. Frequentatore scientifico presso il Centro di Counselling Psicologico della "Sapienza" Università di Roma, dove svolge attività di psicologo clinico/consulente dal 2017, sta svolgendo il tirocinio di specializzazione presso l’Ambulatorio Sociale di Psicoterapia Opera Don Calabria. Lavora privatamente a Roma e on-line.`,
     formazione: [
       "Laurea in Psicologia",
@@ -149,7 +149,7 @@ Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicolo
     citta: "Roma",
     email: "counselling@cmt-ig.org",
     telefono: "340 574 4646",
-    immagine: "/giorgia-abate-portrait.png",
+    immagine: "/giorgia.jpg",
     bio: `Giorgia Abate, Psicologa, specializzanda in Psicoterapia Sistemico-Familiare. Svolge attività di Compagno Adulto presso la Cooperativa “Rifornimento in volo”. Riceve a Roma e on-line.`,
     formazione: [
       "Laurea in Psicologia",
