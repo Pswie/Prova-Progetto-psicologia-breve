@@ -195,10 +195,7 @@ export default function ProfessionistiClientPage() {
         </section>
       </main>
 
-      <Footer />
-    </div>
-  )
-}
-    </div>
-  )
+     <Footer />
+    </div>
+  )
 }
