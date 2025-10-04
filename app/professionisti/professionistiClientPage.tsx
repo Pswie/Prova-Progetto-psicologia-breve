@@ -124,34 +124,36 @@ export default function ProfessionistiClientPage() {
             >
               {professionisti.map((professionista) => (
                 <motion.div key={professionista.slug} variants={itemVariants}>
-                  <Link href={`/professionisti/${professionista.slug}`}>
-                    <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
-                      <div className="relative h-64 overflow-hidden">
-                        <motion.img
-                          src={professionista.immagine}
-                          alt={professionista.nome}
-                          className="w-full h-full object-cover"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.4 }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                      <CardContent className="p-6">
-                        <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                          {professionista.nome}
-                        </h3>
-                        <p className="text-muted-foreground mb-2">{professionista.titolo}</p>
-                        <p className="text-sm text-muted-foreground mb-4">{professionista.specializzazione}</p>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                          <MapPin className="h-4 w-4 text-primary" />
-                          <span>{professionista.citta}</span>
+                  <Link href={`/professionisti/${professionista.slug}`} legacyBehavior passHref>
+                    <a className="no-underline">
+                      <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
+                        <div className="relative h-64 overflow-hidden">
+                          <motion.img
+                            src={professionista.immagine}
+                            alt={professionista.nome}
+                            className="w-full h-full object-cover"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.4 }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-primary font-medium">
-                          <Award className="h-4 w-4" />
-                          <span>{professionista.ruolo}</span>
-                        </div>
-                      </CardContent>
-                    </Card>
+                        <CardContent className="p-6">
+                          <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                            {professionista.nome}
+                          </h3>
+                          <p className="text-muted-foreground mb-2">{professionista.titolo}</p>
+                          <p className="text-sm text-muted-foreground mb-4">{professionista.specializzazione}</p>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                            <MapPin className="h-4 w-4 text-primary" />
+                            <span>{professionista.citta}</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-sm text-primary font-medium">
+                            <Award className="h-4 w-4" />
+                            <span>{professionista.ruolo}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </a>
                   </Link>
                 </motion.div>
               ))}
@@ -194,6 +196,9 @@ export default function ProfessionistiClientPage() {
       </main>
 
       <Footer />
+    </div>
+  )
+}
     </div>
   )
 }
