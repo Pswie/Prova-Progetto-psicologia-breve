@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Clock, CheckCircle, Calendar, ArrowRight, Brain, MessageCircle, Video, MapPin } from "lucide-react"
+import { Users, Clock, CheckCircle, Calendar, ArrowRight, Brain, MessageCircle, Video, MapPin, GraduationCap } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -63,6 +63,23 @@ export default function ServiziClientPage() {
       ],
       color: "secondary",
       link: "/servizi/counselling",
+    },
+    {
+      title: "Counselling Psicologico Universitario",
+      description:
+        "Servizio dedicato agli studenti universitari di Roma per affrontare le sfide dell'università: ansia da esame, blocchi nello studio, adattamento, relazioni sociali. Quattro incontri a tariffe agevolate con psicoterapeuti esperti.",
+      icon: GraduationCap,
+      duration: "4 incontri",
+      price: "Tariffa agevolata",
+      benefits: [
+        "Rivolto a studenti universitari di Roma",
+        "Psicoterapeuti esperti in problematiche universitarie",
+        "Supporto per ansia da esame e blocchi",
+        "Aiuto nell'adattamento universitario",
+        "Tariffe agevolate per studenti",
+      ],
+      color: "primary",
+      link: "/servizi/counselling-universitario",
     },
   ]
 
@@ -145,7 +162,7 @@ export default function ServiziClientPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
