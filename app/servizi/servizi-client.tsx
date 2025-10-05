@@ -161,17 +161,112 @@ export default function ServiziClientPage() {
       {/* Services Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Prime due schede */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {servizi.map((servizio, index) => {
+            {servizi.slice(0, 2).map((servizio, index) => {
               const IconComponent = servizio.icon
               return (
                 <motion.div key={index} variants={fadeInUp}>
+                  <motion.div {...scaleOnHover}>
+                    <Card className="p-8 hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary h-full">
+                      <CardHeader className="pb-6">
+                        <div className="flex items-start justify-between">
+                          <div className="flex items-center gap-4">
+                            <motion.div
+                              className={`w-12 h-12 bg-${servizio.color}/10 rounded-lg flex items-center justify-center`}
+                              whileHover={{ rotate: 360 }}
+                              transition={{ duration: 0.5 }}
+                            >
+                              <IconComponent className={`h-6 w-6 text-${servizio.color}`} />
+                            </motion.div>
+                            <div>
+                              <CardTitle className="text-xl mb-2">{servizio.title}</CardTitle>
+                              <div className="flex gap-2">
+                                <Badge variant="secondary" className="text-xs">
+                                  <Clock className="h-3 w-3 mr-1" />
+                                  {servizio.duration}
+                                </Badge>
+                                <Badge variant="outline" className="text-xs">
+                                  {servizio.price}
+                                </Badge>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="space-y-6">
+                        <p className="text-muted-foreground leading-relaxed">{servizio.description}</p>
+
+                        <div className="space-y-3">
+                          <h4 className="font-medium text-sm text-foreground">Cosa Include:</h4>
+                          <div className="space-y-2">
+                            {servizio.benefits.map((benefit, idx) => (
+                              <motion.div
+                                key={idx}
+                                className="flex items-center gap-2 text-sm"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                              >
+                                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                                <span className="text-muted-foreground">{benefit}</span>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {servizio.link ? (
+                          <Link href={servizio.link}>
+                            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                              <Button className="w-full group">
+                                Scopri di Più
+                                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                              </Button>
+                            </motion.div>
+                          </Link>
+                        ) : (
+                          <Link href="/contatti">
+                            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                              <Button className="w-full group">
+                                Richiedi Informazioni
+                                <motion.div
+                                  className="ml-2"
+                                  animate={{ scale: [1, 1.1, 1] }}
+                                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+                                >
+                                  <Calendar className="h-4 w-4" />
+                                </motion.div>
+                              </Button>
+                            </motion.div>
+                          </Link>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </motion.div>
+              )
+            })}
+          </motion.div>
+
+          {/* Terza scheda centrata */}
+          <motion.div
+            className="flex justify-center"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {servizi.slice(2, 3).map((servizio, index) => {
+              const IconComponent = servizio.icon
+              return (
+                <motion.div key={index} variants={fadeInUp} className="w-full lg:w-1/2">
                   <motion.div {...scaleOnHover}>
                     <Card className="p-8 hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary h-full">
                       <CardHeader className="pb-6">
@@ -413,3 +508,4 @@ export default function ServiziClientPage() {
     </div>
   )
 }
+
