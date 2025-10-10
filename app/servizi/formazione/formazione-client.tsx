@@ -9,7 +9,22 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Users, Clock, CheckCircle, Calendar, ArrowRight, Brain, MessageCircle, Video, MapPin, GraduationCap, BookOpen, Send } from "lucide-react"
+import {
+  BookOpen,
+  Users,
+  GraduationCap,
+  CheckCircle,
+  Clock,
+  Video,
+  Calendar,
+  FileText,
+  Award,
+  Target,
+  Brain,
+  MessageCircle,
+  Send,
+  ArrowRight,
+} from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { useState } from "react"
@@ -33,7 +48,7 @@ const scaleOnHover = {
   whileTap: { scale: 0.98 },
 }
 
-export default function ServiziClientPage() {
+export default function FormazioneClientPage() {
   const [formData, setFormData] = useState({
     servizio: "",
     nome: "",
@@ -64,7 +79,7 @@ export default function ServiziClientPage() {
 
     try {
       // Qui andrà la logica di invio del form
-      await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulazione
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       setSubmitStatus("success")
       setFormData({
         servizio: "",
@@ -83,120 +98,110 @@ export default function ServiziClientPage() {
     }
   }
 
-  const servizi = [
+  const percorsiFormativi = [
     {
-      title: "Psicoterapia Breve CMT",
-      description:
-        "Un percorso di psicoterapia breve della durata di sei mesi (25 sedute settimanali + valutazione iniziale + follow-up). Nato nel 2020 da un'idea di Federica Genova, mira a fornire un aiuto efficace in tempi brevi con obiettivi clinici, empirici e formativi.",
-      icon: Brain,
-      duration: "6 mesi",
-      price: "Variabile o 50€/seduta",
-      benefits: [
-        "25 sedute settimanali + follow-up",
-        "Valutazione psicodiagnostica iniziale",
-        "Terapia personalizzata su misura",
-        "Validata empiricamente",
-        "Progetto di ricerca disponibile",
-      ],
-      color: "primary",
-      link: "/servizi/psicoterapia-breve", // aggiunto link alla nuova pagina
-    },
-    {
-      title: "Counselling Psicologico CMT",
-      description:
-        "Quattro incontri di consulenza psicologica a cadenza settimanale, seguiti da un incontro di follow-up dopo tre mesi. Nato nel 2018 da un'idea di Giuseppe Stefano Biuso, ideale per affrontare difficoltà specifiche in tempi brevi.",
+      title: "Formazione in Counselling Psicologico CMT",
       icon: MessageCircle,
-      duration: "1 mese + follow-up",
-      price: "€250 totali",
-      benefits: [
-        "4 incontri settimanali da 50 minuti",
-        "1 follow-up dopo 3 mesi",
-        "Costo fisso di 250 euro",
-        "Consulenti esperti CMT",
-        "Intervento mirato e breve",
+      duration: "6-12 mesi",
+      modalita: "Mista (online + in presenza)",
+      description:
+        "Percorso formativo specifico per acquisire competenze nel counselling psicologico breve basato sulla Control Mastery Theory. Include teoria, pratica supervisionata e analisi di casi clinici.",
+      moduli: [
+        "Fondamenti della Control Mastery Theory",
+        "Tecniche di counselling psicologico breve",
+        "Valutazione e formulazione del caso",
+        "Gestione della relazione terapeutica",
+        "Supervisione su casi reali",
+        "Role-playing e simulazioni",
       ],
-      color: "secondary",
-      link: "/servizi/counselling",
+      requisiti: [
+        "Laurea in Psicologia o titolo equipollente",
+        "Iscrizione all'Albo degli Psicologi",
+        "Esperienza clinica pregressa (preferibile)",
+      ],
     },
     {
-      title: "Counselling Psicologico Universitario",
+      title: "Formazione in Psicoterapia Breve CMT",
+      icon: Brain,
+      duration: "12-24 mesi",
+      modalita: "Mista (online + in presenza)",
       description:
-        "Servizio dedicato agli studenti universitari di Roma per affrontare le sfide dell'università: ansia da esame, blocchi nello studio, adattamento, relazioni sociali. Quattro incontri a tariffe agevolate con psicoterapeuti esperti.",
-      icon: GraduationCap,
-      duration: "4 incontri",
-      price: "Tariffa agevolata",
-      benefits: [
-        "Rivolto a studenti universitari di Roma",
-        "Psicoterapeuti esperti in problematiche universitarie",
-        "Supporto per ansia da esame e blocchi",
-        "Aiuto nell'adattamento universitario",
-        "Tariffe agevolate per studenti",
+        "Percorso formativo avanzato per psicoterapeuti che desiderano specializzarsi nell'approccio della psicoterapia breve secondo la Control Mastery Theory. Formazione teorica intensiva e supervisione clinica continua.",
+      moduli: [
+        "CMT avanzata: teoria e ricerca empirica",
+        "Psicoterapia breve: protocolli a 6 mesi",
+        "Valutazione psicodiagnostica integrata",
+        "Formulazione del piano terapeutico CMT",
+        "Test del paziente e tecniche specifiche",
+        "Supervisione intensiva su casi complessi",
+        "Metodologia di ricerca in psicoterapia",
       ],
-      color: "primary",
-      link: "/servizi/counselling-universitario",
-    },
-    {
-      title: "Formazione in Counselling e Psicoterapia Breve CMT",
-      description:
-        "Percorsi formativi avanzati per professionisti della salute mentale che desiderano approfondire la Control Mastery Theory. Formazione teorica e pratica per counselling psicologico e psicoterapia breve, con supervisione e certificazione.",
-      icon: BookOpen,
-      duration: "Programmi variabili",
-      price: "Su richiesta",
-      benefits: [
-        "Formazione teorica sulla Control Mastery Theory",
-        "Supervisione clinica con esperti CMT",
-        "Training pratico su counselling e psicoterapia breve",
-        "Certificazione riconosciuta dalla rete CMT-IG",
-        "Accesso alla community dei professionisti CMT",
+      requisiti: [
+        "Specializzazione in Psicoterapia riconosciuta",
+        "Iscrizione all'Albo degli Psicologi",
+        "Almeno 2 anni di esperienza clinica",
       ],
-      color: "secondary",
-      link: "/servizi/formazione",
     },
   ]
 
-  const specializzazioni = [
+  const vantaggi = [
     {
-      area: "Adattamento Interpersonale",
-      description: "Difficoltà nelle relazioni, problemi di comunicazione, conflitti relazionali",
-      icon: Users,
+      icon: Award,
+      title: "Certificazione Riconosciuta",
+      description: "Attestato finale rilasciato dalla rete CMT-IG, riconosciuto a livello nazionale",
     },
-    {
-      area: "Credenze Patogene",
-      description: "Convinzioni limitanti, schemi disfunzionali, pattern ripetitivi",
-      icon: Brain,
-    },
-    {
-      area: "Obiettivi Inconsci",
-      description: "Comprensione e superamento di obiettivi inconsci che guidano il comportamento",
-      icon: MessageCircle,
-    },
-    {
-      area: "Test del Paziente",
-      description: "Riconoscimento e gestione dei test inconsci nelle relazioni terapeutiche",
-      icon: CheckCircle,
-    },
-  ]
-
-  const caratteristiche = [
     {
       icon: Users,
-      title: "Rete di Professionisti",
-      description: "Psicologi e psicoterapeuti esperti del Control-Mastery Theory Italian Group (CMT-IG)",
+      title: "Docenti Esperti",
+      description: "Formatori con esperienza pluriennale nella CMT e nella pratica clinica",
     },
     {
-      icon: MapPin,
-      title: "Sedi Multiple",
-      description: "Operativi a Roma, Milano e altre città italiane presso studi privati",
+      icon: Target,
+      title: "Supervisione Clinica",
+      description: "Supervisione continuativa sui casi seguiti durante il percorso formativo",
     },
     {
       icon: Video,
-      title: "Videoconsulenze Online",
-      description: "Possibilità di seguire il percorso terapeutico comodamente da casa",
+      title: "Modalità Flessibile",
+      description: "Formazione mista con lezioni online e workshop in presenza",
     },
     {
-      icon: CheckCircle,
-      title: "Modello Validato",
-      description: "Approccio teorico della Control Mastery Theory validato empiricamente",
+      icon: FileText,
+      title: "Materiali Didattici",
+      description: "Accesso a biblioteca digitale, articoli scientifici e video registrazioni",
+    },
+    {
+      icon: GraduationCap,
+      title: "Community Professionale",
+      description: "Ingresso nella rete CMT-IG con accesso a eventi, convegni e gruppi di studio",
+    },
+  ]
+
+  const faq = [
+    {
+      question: "Quali sono i requisiti di accesso?",
+      answer:
+        "Per il counselling è richiesta la laurea in Psicologia e l'iscrizione all'Albo. Per la psicoterapia breve è necessaria la specializzazione in Psicoterapia e almeno 2 anni di esperienza clinica.",
+    },
+    {
+      question: "La formazione è riconosciuta?",
+      answer:
+        "Sì, il percorso formativo rilascia un attestato riconosciuto dalla rete CMT-IG (Control-Mastery Theory Italian Group) e valido per ECM se accreditato.",
+    },
+    {
+      question: "Quali sono i costi?",
+      answer:
+        "I costi variano in base al percorso scelto e alla durata. Contattaci per ricevere un preventivo dettagliato e informazioni su eventuali rateizzazioni disponibili.",
+    },
+    {
+      question: "Come si svolge la supervisione?",
+      answer:
+        "La supervisione avviene in piccoli gruppi (max 6 persone) con cadenza quindicinale o mensile, su casi clinici reali seguiti dai partecipanti. Include anche supervisioni individuali.",
+    },
+    {
+      question: "È possibile seguire la formazione a distanza?",
+      answer:
+        "Sì, la formazione è in modalità mista: le lezioni teoriche possono essere seguite online, mentre i workshop pratici e alcune supervisioni si tengono in presenza nelle sedi della rete.",
     },
   ]
 
@@ -208,31 +213,75 @@ export default function ServiziClientPage() {
       <section className="pt-24 pb-16 hero-gradient overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6"
+            >
+              <BookOpen className="h-5 w-5 text-primary" />
+              <span className="text-sm font-medium">Formazione Professionale CMT</span>
+            </motion.div>
+
             <motion.h1
               className="text-4xl md:text-5xl font-bold text-balance mb-6"
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              I Nostri <span className="text-primary">Servizi</span>
+              Formazione in <span className="text-primary">Counselling</span> e{" "}
+              <span className="text-primary">Psicoterapia Breve</span> CMT
             </motion.h1>
+
             <motion.p
               className="text-xl text-muted-foreground text-balance mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              La rete Psicoterapia Breve e Counselling CMT offre servizi di qualità a costi accessibili, fondati sulla
-              Control Mastery Theory validata empiricamente.
+              Percorsi formativi avanzati per professionisti della salute mentale che desiderano specializzarsi nella
+              Control Mastery Theory. Formazione teorica, supervisione clinica e certificazione riconosciuta.
             </motion.p>
+
+            <motion.div
+              className="flex flex-wrap gap-4 justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Badge variant="secondary" className="px-4 py-2 text-sm">
+                <GraduationCap className="h-4 w-4 mr-2" />
+                Certificazione CMT-IG
+              </Badge>
+              <Badge variant="secondary" className="px-4 py-2 text-sm">
+                <Users className="h-4 w-4 mr-2" />
+                Supervisione Clinica
+              </Badge>
+              <Badge variant="secondary" className="px-4 py-2 text-sm">
+                <Video className="h-4 w-4 mr-2" />
+                Modalità Mista
+              </Badge>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Percorsi Formativi */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Tutte le schede in griglia 2x2 */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">I Nostri Percorsi Formativi</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
+              Scegli il percorso più adatto al tuo livello di esperienza e ai tuoi obiettivi professionali
+            </p>
+          </motion.div>
+
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-8"
             variants={staggerContainer}
@@ -240,84 +289,76 @@ export default function ServiziClientPage() {
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {servizi.map((servizio, index) => {
-              const IconComponent = servizio.icon
+            {percorsiFormativi.map((percorso, index) => {
+              const IconComponent = percorso.icon
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-8 hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary h-full">
+                    <Card className="p-8 hover:shadow-lg transition-all duration-300 border-t-4 border-t-primary h-full">
                       <CardHeader className="pb-6">
-                        <div className="flex items-start justify-between">
-                          <div className="flex items-center gap-4">
-                            <motion.div
-                              className={`w-12 h-12 bg-${servizio.color}/10 rounded-lg flex items-center justify-center`}
-                              whileHover={{ rotate: 360 }}
-                              transition={{ duration: 0.5 }}
-                            >
-                              <IconComponent className={`h-6 w-6 text-${servizio.color}`} />
-                            </motion.div>
-                            <div>
-                              <CardTitle className="text-xl mb-2">{servizio.title}</CardTitle>
-                              <div className="flex gap-2">
-                                <Badge variant="secondary" className="text-xs">
-                                  <Clock className="h-3 w-3 mr-1" />
-                                  {servizio.duration}
-                                </Badge>
-                                <Badge variant="outline" className="text-xs">
-                                  {servizio.price}
-                                </Badge>
-                              </div>
+                        <div className="flex items-start gap-4 mb-4">
+                          <motion.div
+                            className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0"
+                            whileHover={{ rotate: 360 }}
+                            transition={{ duration: 0.5 }}
+                          >
+                            <IconComponent className="h-6 w-6 text-primary" />
+                          </motion.div>
+                          <div className="flex-1">
+                            <CardTitle className="text-xl mb-3">{percorso.title}</CardTitle>
+                            <div className="flex flex-wrap gap-2">
+                              <Badge variant="secondary" className="text-xs">
+                                <Clock className="h-3 w-3 mr-1" />
+                                {percorso.duration}
+                              </Badge>
+                              <Badge variant="outline" className="text-xs">
+                                {percorso.modalita}
+                              </Badge>
                             </div>
                           </div>
                         </div>
+                        <p className="text-muted-foreground leading-relaxed">{percorso.description}</p>
                       </CardHeader>
-                      <CardContent className="space-y-6">
-                        <p className="text-muted-foreground leading-relaxed">{servizio.description}</p>
 
+                      <CardContent className="space-y-6">
+                        {/* Moduli */}
                         <div className="space-y-3">
-                          <h4 className="font-medium text-sm text-foreground">Cosa Include:</h4>
+                          <h4 className="font-semibold text-sm flex items-center gap-2">
+                            <FileText className="h-4 w-4 text-primary" />
+                            Moduli Formativi:
+                          </h4>
                           <div className="space-y-2">
-                            {servizio.benefits.map((benefit, idx) => (
+                            {percorso.moduli.map((modulo, idx) => (
                               <motion.div
                                 key={idx}
-                                className="flex items-center gap-2 text-sm"
+                                className="flex items-start gap-2 text-sm"
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
+                                transition={{ delay: idx * 0.05 }}
                               >
-                                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                                <span className="text-muted-foreground">{benefit}</span>
+                                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                                <span className="text-muted-foreground">{modulo}</span>
                               </motion.div>
                             ))}
                           </div>
                         </div>
 
-                        {servizio.link ? (
-                          <Link href={servizio.link}>
-                            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                              <Button className="w-full group">
-                                Scopri di Più
-                                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                              </Button>
-                            </motion.div>
-                          </Link>
-                        ) : (
-                          <Link href="/contatti">
-                            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                              <Button className="w-full group">
-                                Richiedi Informazioni
-                                <motion.div
-                                  className="ml-2"
-                                  animate={{ scale: [1, 1.1, 1] }}
-                                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                                >
-                                  <Calendar className="h-4 w-4" />
-                                </motion.div>
-                              </Button>
-                            </motion.div>
-                          </Link>
-                        )}
+                        {/* Requisiti */}
+                        <div className="space-y-3 pt-4 border-t">
+                          <h4 className="font-semibold text-sm flex items-center gap-2">
+                            <GraduationCap className="h-4 w-4 text-primary" />
+                            Requisiti di Accesso:
+                          </h4>
+                          <div className="space-y-2">
+                            {percorso.requisiti.map((requisito, idx) => (
+                              <div key={idx} className="flex items-start gap-2 text-sm">
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
+                                <span className="text-muted-foreground">{requisito}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -328,7 +369,7 @@ export default function ServiziClientPage() {
         </div>
       </section>
 
-      {/* Caratteristiche della Rete CMT */}
+      {/* Vantaggi */}
       <section className="py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -338,35 +379,35 @@ export default function ServiziClientPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">La Rete CMT</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Perché Scegliere la Nostra Formazione</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-              Professionisti esperti del Control-Mastery Theory Italian Group al tuo servizio
+              I vantaggi di formarsi con la rete CMT-IG e diventare parte di una community professionale d'eccellenza
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {caratteristiche.map((item, index) => {
-              const IconComponent = item.icon
+            {vantaggi.map((vantaggio, index) => {
+              const IconComponent = vantaggio.icon
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow h-full text-center">
+                    <Card className="p-6 hover:shadow-lg transition-shadow h-full">
                       <CardContent className="space-y-4">
                         <motion.div
-                          className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
+                          className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
                           whileHover={{ rotate: 360 }}
                           transition={{ duration: 0.5 }}
                         >
                           <IconComponent className="h-6 w-6 text-primary" />
                         </motion.div>
-                        <h3 className="font-semibold text-lg">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                        <h3 className="font-semibold text-lg">{vantaggio.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{vantaggio.description}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -377,9 +418,9 @@ export default function ServiziClientPage() {
         </div>
       </section>
 
-      {/* Specializzazioni */}
+      {/* FAQ */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 50 }}
@@ -387,48 +428,35 @@ export default function ServiziClientPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Aree di Intervento</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-              La Control Mastery Theory si concentra su aspetti fondamentali del funzionamento psicologico
+            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Domande Frequenti</h2>
+            <p className="text-lg text-muted-foreground text-balance">
+              Risposte alle domande più comuni sulla formazione CMT
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="space-y-4"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {specializzazioni.map((spec, index) => {
-              const IconComponent = spec.icon
-              return (
-                <motion.div key={index} variants={fadeInUp}>
-                  <motion.div {...scaleOnHover}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow h-full">
-                      <CardContent className="space-y-4">
-                        <div className="flex items-center gap-3">
-                          <motion.div
-                            className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center"
-                            whileHover={{ rotate: 360 }}
-                            transition={{ duration: 0.5 }}
-                          >
-                            <IconComponent className="h-4 w-4 text-primary" />
-                          </motion.div>
-                          <h3 className="font-semibold text-lg">{spec.area}</h3>
-                        </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{spec.description}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </motion.div>
-              )
-            })}
+            {faq.map((item, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="p-6 hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-lg mb-3 flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    {item.question}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed ml-7">{item.answer}</p>
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Form di Contatto per Formazione */}
+      {/* Form di Contatto */}
       <section className="py-16 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -438,11 +466,10 @@ export default function ServiziClientPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">
-              Richiedi Informazioni sulla Formazione
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Richiedi Informazioni</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
-              Compila il form per ricevere maggiori dettagli sui nostri percorsi formativi in Counselling e Psicoterapia Breve CMT
+              Compila il form per ricevere maggiori dettagli sui nostri percorsi formativi e verificare i requisiti di
+              accesso
             </p>
           </motion.div>
 
@@ -629,7 +656,7 @@ export default function ServiziClientPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Pronto a Iniziare?
+            Inizia il Tuo Percorso Formativo
           </motion.h2>
           <motion.p
             className="text-lg text-muted-foreground text-balance mb-8 leading-relaxed"
@@ -638,7 +665,8 @@ export default function ServiziClientPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Contattaci per maggiori informazioni sui nostri servizi di psicoterapia breve e counselling CMT.
+            Diventa parte della rete di professionisti esperti in Control Mastery Theory e porta la tua pratica clinica
+            a un nuovo livello.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -647,10 +675,17 @@ export default function ServiziClientPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Link href="/professionisti">
+            <Link href="/servizi">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
+                  Vedi Tutti i Servizi
+                </Button>
+              </motion.div>
+            </Link>
+            <Link href="/chi-sono">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" className="text-lg px-8 group">
-                  Trova un Professionista
+                  Scopri Chi Siamo
                   <motion.div
                     className="ml-2"
                     animate={{ x: [0, 5, 0] }}
@@ -658,13 +693,6 @@ export default function ServiziClientPage() {
                   >
                     <ArrowRight className="h-4 w-4" />
                   </motion.div>
-                </Button>
-              </motion.div>
-            </Link>
-            <Link href="/chi-sono">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
-                  Chi Siamo
                 </Button>
               </motion.div>
             </Link>
@@ -676,4 +704,3 @@ export default function ServiziClientPage() {
     </div>
   )
 }
-
