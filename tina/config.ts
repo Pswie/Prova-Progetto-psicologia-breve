@@ -91,6 +91,84 @@ export default defineConfig({
         },
       },
       {
+        name: "news",
+        label: "News",
+        path: "content/news",
+        format: "mdx",
+        defaultItem: () => ({
+          date: new Date().toISOString(),
+          readTime: "3 min",
+          published: true,
+        }),
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Titolo",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "excerpt",
+            label: "Estratto",
+            ui: {
+              component: "textarea",
+            },
+            required: true,
+          },
+          {
+            type: "string",
+            name: "author",
+            label: "Autore",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "Data di pubblicazione",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "readTime",
+            label: "Tempo di lettura",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Categoria",
+            description: "Inserisci una categoria libera per raggruppare le news.",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "coverImage",
+            label: "Immagine di copertina",
+            required: true,
+          },
+          {
+            type: "boolean",
+            name: "published",
+            label: "Pubblicato",
+            required: true,
+            ui: {
+              component: "toggle",
+            },
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Contenuto",
+            isBody: true,
+          },
+        ],
+        ui: {
+          router: ({ document }) => `/news/${document._sys.filename}`,
+        },
+      },
+      {
         name: "membro",
         label: "Membri del Team",
         path: "content/membri",

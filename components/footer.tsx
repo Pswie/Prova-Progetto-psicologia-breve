@@ -44,6 +44,12 @@ export default function Footer() {
                 Articoli
               </Link>
               <Link
+                href="/news"
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                News
+              </Link>
+              <Link
                 href="/chi-sono"
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors"
               >

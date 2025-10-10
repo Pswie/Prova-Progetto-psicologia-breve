@@ -14,6 +14,7 @@ export default function Navigation() {
     { href: "/servizi", label: "Servizi" },
     { href: "/professionisti", label: "Professionisti" }, // aggiunto link professionisti
     { href: "/articoli", label: "Articoli" },
+    { href: "/news", label: "News" },
     { href: "/chi-sono", label: "Chi Siamo" }, // Cambiato da "Chi Sono" a "Chi Siamo"
     { href: "/contatti", label: "Contatti" },
   ]
