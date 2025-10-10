@@ -418,45 +418,8 @@ export default function FormazioneClientPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Domande Frequenti</h2>
-            <p className="text-lg text-muted-foreground text-balance">
-              Risposte alle domande più comuni sulla formazione CMT
-            </p>
-          </motion.div>
 
-          <motion.div
-            className="space-y-4"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {faq.map((item, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <Card className="p-6 hover:shadow-md transition-shadow">
-                  <h3 className="font-semibold text-lg mb-3 flex items-start gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    {item.question}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed ml-7">{item.answer}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Form di Contatto */}
+            {/* Form di Contatto */}
       <section className="py-16 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -645,6 +608,46 @@ export default function FormazioneClientPage() {
           </motion.div>
         </div>
       </section>
+
+
+      {/* FAQ */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Domande Frequenti</h2>
+            <p className="text-lg text-muted-foreground text-balance">
+              Risposte alle domande più comuni sulla formazione CMT
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="space-y-4"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {faq.map((item, index) => (
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="p-6 hover:shadow-md transition-shadow">
+                  <h3 className="font-semibold text-lg mb-3 flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    {item.question}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed ml-7">{item.answer}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
 
       {/* CTA Section */}
       <section className="py-16">
