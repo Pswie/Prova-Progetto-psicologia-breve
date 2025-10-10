@@ -7,64 +7,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Mail, Award } from "lucide-react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import type { Member } from "@/lib/tina/members"
 
-// --- DATI DEI PROFESSIONISTI CORRETTI E AGGIORNATI ---
-const professionisti = [
-  {
-    slug: "giuseppe-stefano-biuso",
-    nome: "Giuseppe Stefano Biuso",
-    titolo: "Psicologo, Counsellor, Psicoterapeuta",
-    specializzazione: "Specialista in Psicologia Clinica",
-    citta: "Roma",
-    immagine: "/busio.jpg",
-    ruolo: "Responsabile Rete Counselling CMT",
-  },
-  {
-    slug: "roberta-alesiani",
-    nome: "Roberta Alesiani",
-    titolo: "Psicologa Clinica, Psicoterapeuta",
-    specializzazione: "Specialista in Psicologia Clinica",
-    citta: "Milano",
-    immagine: "/roberta alesiani.jpg",
-    ruolo: "Socio SPR e SFPRG",
-  },
-  {
-    slug: "federica-genova",
-    nome: "Federica Genova",
-    titolo: "Psicoterapeuta Psicodinamica",
-    specializzazione: "Dottore di Ricerca in Psicologia",
-    citta: "Roma",
-    immagine: "/federica genova.jpg",
-    ruolo: "Socio AIP, SPR, SFPRG",
-  },
-  {
-    slug: "martina-calabro",
-    nome: "Martina Calabrò",
-    titolo: "Psicologa, Esperta in Psicodiagnosi",
-    specializzazione: "Specializzanda in Psicologia Clinica",
-    citta: "Roma",
-    immagine: "/martina.jpg",
-    ruolo: "Psicologo clinico/consulente",
-  },
-  {
-    slug: "emanuele-dammando",
-    nome: "Emanuele D'Ammando",
-    titolo: "Psicologo",
-    specializzazione: "Specializzando in Psicoterapia",
-    citta: "Roma",
-    immagine: "/emanuele.jpg",
-    ruolo: "Psicologo clinico/consulente",
-  },
-  {
-    slug: "giorgia-abate",
-    nome: "Giorgia Abate",
-    titolo: "Psicologa",
-    specializzazione: "Specializzanda in Psicoterapia",
-    citta: "Roma",
-    immagine: "/giorgia.jpg",
-    ruolo: "Compagno Adulto",
-  },
-]
+interface ProfessionistiClientPageProps {
+  membri: Member[]
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -88,7 +35,7 @@ const itemVariants = {
   },
 }
 
-export default function ProfessionistiClientPage() {
+export default function ProfessionistiClientPage({ membri }: ProfessionistiClientPageProps) {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -122,14 +69,14 @@ export default function ProfessionistiClientPage() {
               viewport={{ once: true, margin: "-100px" }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {professionisti.map((professionista) => (
-                <motion.div key={professionista.slug} variants={itemVariants}>
-                  <Link href={`/professionisti/${professionista.slug}`} className="no-underline block">
+              {membri.map((membro) => (
+                <motion.div key={membro.slug} variants={itemVariants}>
+                  <Link href={`/professionisti/${membro.slug}`} className="no-underline block">
                     <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
                       <div className="relative h-64 overflow-hidden">
                         <motion.img
-                          src={professionista.immagine}
-                          alt={professionista.nome}
+                          src={membro.immagine || "/placeholder-user.jpg"}
+                          alt={`${membro.nome} ${membro.cognome}`}
                           className="w-full h-full object-cover"
                           whileHover={{ scale: 1.05 }}
                           transition={{ duration: 0.4 }}
@@ -138,18 +85,22 @@ export default function ProfessionistiClientPage() {
                       </div>
                       <CardContent className="p-6">
                         <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                          {professionista.nome}
+                          {membro.nome} {membro.cognome}
                         </h3>
-                        <p className="text-muted-foreground mb-2">{professionista.titolo}</p>
-                        <p className="text-sm text-muted-foreground mb-4">{professionista.specializzazione}</p>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                          <MapPin className="h-4 w-4 text-primary" />
-                          <span>{professionista.citta}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-primary font-medium">
-                          <Award className="h-4 w-4" />
-                          <span>{professionista.ruolo}</span>
-                        </div>
+                        <p className="text-muted-foreground mb-2">{membro.ruolo}</p>
+                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{membro.bio}</p>
+                        {membro.citta && (
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                            <MapPin className="h-4 w-4 text-primary" />
+                            <span>{membro.citta}</span>
+                          </div>
+                        )}
+                        {membro.specializzazioni && (
+                          <div className="flex items-center gap-2 text-sm text-primary font-medium">
+                            <Award className="h-4 w-4" />
+                            <span className="line-clamp-1">{membro.specializzazioni.split(",")[0]}</span>
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   </Link>

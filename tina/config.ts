@@ -90,6 +90,93 @@ export default defineConfig({
           router: ({ document }) => `/articoli/${document._sys.filename}`,
         },
       },
+      {
+        name: "membro",
+        label: "Membri del Team",
+        path: "content/membri",
+        format: "mdx",
+        fields: [
+          {
+            type: "string",
+            name: "nome",
+            label: "Nome",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "cognome",
+            label: "Cognome",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "ruolo",
+            label: "Ruolo / Titolo",
+            description: "Es: Psicologo e Psicoterapeuta",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "immagine",
+            label: "Foto profilo",
+            required: false,
+          },
+          {
+            type: "string",
+            name: "bio",
+            label: "Biografia breve",
+            ui: {
+              component: "textarea",
+            },
+            required: true,
+          },
+          {
+            type: "string",
+            name: "email",
+            label: "Email",
+            required: false,
+          },
+          {
+            type: "string",
+            name: "telefono",
+            label: "Telefono",
+            required: false,
+          },
+          {
+            type: "string",
+            name: "citta",
+            label: "Città",
+            description: "Es: Roma, Milano",
+            required: false,
+          },
+          {
+            type: "string",
+            name: "specializzazioni",
+            label: "Specializzazioni",
+            description: "Separate da virgola. Es: Disturbi d'ansia, Terapia di coppia",
+            ui: {
+              component: "textarea",
+            },
+            required: false,
+          },
+          {
+            type: "string",
+            name: "ordine",
+            label: "Numero Ordine",
+            description: "Ordine di visualizzazione (numero basso = prima posizione)",
+            required: false,
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Descrizione estesa (opzionale)",
+            isBody: true,
+          },
+        ],
+        ui: {
+          router: ({ document }) => `/professionisti#${document._sys.filename}`,
+        },
+      },
     ],
   },
 })

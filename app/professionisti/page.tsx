@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { generateMetadata as genMeta } from "@/lib/seo-config"
 import ProfessionistiClientPage from "./professionistiClientPage"
+import { getAllMembers } from "@/lib/tina/members"
 
 export const metadata: Metadata = genMeta({
   title: "I Nostri Professionisti",
@@ -11,5 +12,6 @@ export const metadata: Metadata = genMeta({
 })
 
 export default function ProfessionistiPage() {
-  return <ProfessionistiClientPage />
+  const membri = getAllMembers()
+  return <ProfessionistiClientPage membri={membri} />
 }
