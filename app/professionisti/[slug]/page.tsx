@@ -1,9 +1,12 @@
 import type { Metadata } from "next"
 import { generateMetadata as genMeta } from "@/lib/seo-config"
 import ProfessionistaClientPage from "./professionista-client-page"
+import { getAllMembers, getMemberBySlug } from "@/lib/tina/members"
+import { notFound } from "next/navigation"
 
-// Database mockup - in futuro sarà collegato a un database reale
-const professionistiData: Record<string, any> = {
+// Database mockup - DEPRECATO: ora usiamo i dati da TinaCMS
+// Mantenuto per riferimento storico ma non più utilizzato
+const professionistiDataOLD: Record<string, any> = {
   "giuseppe-stefano-biuso": {
     nome: "Giuseppe Stefano Biuso",
     titolo: "Psicologo, Counsellor, Psicoterapeuta",
@@ -164,64 +167,73 @@ Dal 2012 è psicologo clinico/consulente presso il Centro di Counselling Psicolo
     ],
   },
 }; // <-- ERRORE CORRETTO: Aggiunta la parentesi graffa e il punto e virgola
-// NUOVA FUNZIONE AGGIUNTA QUI
+
+// NUOVA FUNZIONE AGGIUNTA QUI - Usa i dati da TinaCMS
 export async function generateStaticParams() {
-  return Object.keys(professionistiData).map((slug) => ({
-    slug: slug,
+  const membri = getAllMembers()
+  return membri.map((membro) => ({
+    slug: membro.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const professionista = professionistiData[params.slug]
+  const membro = getMemberBySlug(params.slug)
 
-  if (!professionista) {
-    return {}
-  }
+  if (!membro) {
+    return {}
+  }
 
-  return genMeta({
-    title: professionista.nome,
-    description: `${professionista.nome} - ${professionista.titolo}. ${professionista.specializzazione}. ${professionista.ruolo} a ${professionista.citta}.`,
-    keywords: [
-      professionista.nome,
-      professionista.specializzazione,
-      professionista.citta,
-      "psicologo",
-      "psicoterapeuta",
-      "CMT",
-    ],
-    path: `/professionisti/${params.slug}`,
-    type: "profile",
-  })
+  const nomeCompleto = `${membro.nome} ${membro.cognome}`
+  
+  return genMeta({
+    title: nomeCompleto,
+    description: `${nomeCompleto} - ${membro.ruolo}. ${membro.bio} ${membro.citta ? `Opera a ${membro.citta}.` : ''}`,
+    keywords: [
+      nomeCompleto,
+      membro.ruolo,
+      membro.citta || "",
+      "psicologo",
+      "psicoterapeuta",
+      "CMT",
+      ...(membro.specializzazioni ? membro.specializzazioni.split(',').map(s => s.trim()) : [])
+    ].filter(Boolean),
+    path: `/professionisti/${params.slug}`,
+    type: "profile",
+  })
 }
 
 export default function ProfessionistiPage({ params }: { params: { slug: string } }) {
-  const professionista = professionistiData[params.slug]
+  const membro = getMemberBySlug(params.slug)
 
   // Se per qualche motivo lo slug non viene trovato, mostra una pagina non trovata
-  if (!professionista) {
-    // Per una gestione migliore, potresti usare la funzione notFound() di Next.js
-   return <div>Professionista non trovato.</div>;
-  }
+  if (!membro) {
+    notFound()
+  }
 
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: professionista?.nome || "",
-    jobTitle: professionista?.titolo || "",
-    description: professionista?.bio || "",
-    email: professionista?.email || "",
-    telephone: professionista?.telefono || "",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: professionista?.citta || "",
-      addressCountry: "IT",
-    },
-    memberOf: {
-      "@type": "Organization",
-      name: "Control Mastery Theory Italian Group",
-    },
-    knowsAbout: professionista?.areeSpecializzazione || [],
-  }
+  const nomeCompleto = `${membro.nome} ${membro.cognome}`
+  const specializzazioniArray = membro.specializzazioni 
+    ? membro.specializzazioni.split(',').map(s => s.trim())
+    : []
 
-  return <ProfessionistaClientPage professionista={professionista} personSchema={personSchema} />
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: nomeCompleto,
+    jobTitle: membro.ruolo,
+    description: membro.bio,
+    email: membro.email || "",
+    telephone: membro.telefono || "",
+    address: membro.citta ? {
+      "@type": "PostalAddress",
+      addressLocality: membro.citta,
+      addressCountry: "IT",
+    } : undefined,
+    memberOf: {
+      "@type": "Organization",
+      name: "Control Mastery Theory Italian Group",
+    },
+    knowsAbout: specializzazioniArray,
+  }
+
+  return <ProfessionistaClientPage professionista={membro} personSchema={personSchema} />
 }
