@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { generateMetadata as genMeta } from "@/lib/seo-config"
 import HomePageClient from "./page.client"
+import { getLatestCombinedContent } from "@/lib/tina/combined-content"
 
 export const metadata: Metadata = genMeta({
   title: "Home",
@@ -11,5 +12,6 @@ export const metadata: Metadata = genMeta({
 })
 
 export default function HomePage() {
-  return <HomePageClient />
+  const latestContent = getLatestCombinedContent(3)
+  return <HomePageClient latestContent={latestContent} />
 }

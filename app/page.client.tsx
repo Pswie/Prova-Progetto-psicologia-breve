@@ -4,10 +4,13 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Brain, Heart, Users, Clock, CheckCircle, ArrowRight, MapPin, Video } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Brain, Heart, Users, Clock, CheckCircle, ArrowRight, MapPin, Video, Calendar, BookOpen } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import CMTDynamicSection from "@/components/cmt-dynamic-section"
+import type { CombinedContent } from "@/lib/tina/combined-content"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -28,7 +31,11 @@ const scaleOnHover = {
   whileTap: { scale: 0.95 },
 }
 
-export default function HomePageClient() {
+interface HomePageClientProps {
+  latestContent: CombinedContent[]
+}
+
+export default function HomePageClient({ latestContent }: HomePageClientProps) {
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -461,6 +468,120 @@ export default function HomePageClient() {
           </motion.div>
         </div>
       </section>
+
+      {/* Articoli e News Section */}
+      {latestContent && latestContent.length > 0 && (
+        <section className="py-16 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Articoli e News</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Scopri gli ultimi approfondimenti sulla Control Mastery Theory e le novità della nostra rete
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              {latestContent.map((item) => (
+                <motion.div key={item.slug} variants={fadeInUp}>
+                  <Link href={item.url} className="block group h-full">
+                    <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                      {item.coverImage && (
+                        <div className="relative w-full h-48 overflow-hidden bg-muted">
+                          <Image
+                            src={item.coverImage}
+                            alt={item.title}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-300"
+                          />
+                          <div className="absolute top-4 left-4">
+                            <Badge variant={item.type === 'news' ? 'default' : 'secondary'} className="shadow-md">
+                              {item.type === 'news' ? (
+                                <>
+                                  <Calendar className="w-3 h-3 mr-1" />
+                                  News
+                                </>
+                              ) : (
+                                <>
+                                  <BookOpen className="w-3 h-3 mr-1" />
+                                  Articolo
+                                </>
+                              )}
+                            </Badge>
+                          </div>
+                        </div>
+                      )}
+
+                      <CardContent className="p-6">
+                        <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
+                          {item.category && <span className="font-medium">{item.category}</span>}
+                          {item.readTime && (
+                            <>
+                              <span>•</span>
+                              <span className="flex items-center gap-1">
+                                <Clock className="w-3 h-3" />
+                                {item.readTime}
+                              </span>
+                            </>
+                          )}
+                        </div>
+
+                        <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                          {item.title}
+                        </h3>
+
+                        <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{item.excerpt}</p>
+
+                        <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t">
+                          <span>{item.author}</span>
+                          <span>
+                            {new Date(item.date).toLocaleDateString('it-IT', {
+                              day: 'numeric',
+                              month: 'short',
+                              year: 'numeric'
+                            })}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center gap-2 text-primary font-medium mt-4 group-hover:gap-3 transition-all">
+                          <span className="text-sm">Leggi di più</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="text-center mt-10"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Link href="/articoli">
+                <Button variant="outline" size="lg" className="gap-2">
+                  Vedi Tutti gli Articoli
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-16">
