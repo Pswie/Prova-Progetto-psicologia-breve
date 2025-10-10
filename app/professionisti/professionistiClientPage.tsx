@@ -35,7 +35,7 @@ const itemVariants = {
   },
 }
 
-export default function ProfessionistiClientPage({ membri }: ProfessionistiClientPageProps) {
+export default function ProfessionistiClientPage({ membri = [] }: ProfessionistiClientPageProps) {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -62,14 +62,21 @@ export default function ProfessionistiClientPage({ membri }: ProfessionistiClien
         {/* Professionisti Grid */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {membri.map((membro) => (
+            {membri.length === 0 ? (
+              <div className="text-center py-16">
+                <p className="text-xl text-muted-foreground">
+                  Non ci sono ancora professionisti da mostrare. Aggiungi membri tramite TinaCMS.
+                </p>
+              </div>
+            ) : (
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {membri.map((membro) => (
                 <motion.div key={membro.slug} variants={itemVariants}>
                   <Link href={`/professionisti/${membro.slug}`} className="no-underline block">
                     <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group h-full">
@@ -106,7 +113,8 @@ export default function ProfessionistiClientPage({ membri }: ProfessionistiClien
                   </Link>
                 </motion.div>
               ))}
-            </motion.div>
+              </motion.div>
+            )}
           </div>
         </section>
 

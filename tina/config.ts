@@ -100,6 +100,7 @@ export default defineConfig({
             type: "string",
             name: "nome",
             label: "Nome",
+            isTitle: true,
             required: true,
           },
           {

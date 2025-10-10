@@ -12,6 +12,6 @@ export const metadata: Metadata = genMeta({
 })
 
 export default function ProfessionistiPage() {
-  const membri = getAllMembers()
+  const membri = getAllMembers() || []
   return <ProfessionistiClientPage membri={membri} />
 }
