@@ -95,6 +95,13 @@ export default defineConfig({
         label: "Membri del Team",
         path: "content/membri",
         format: "mdx",
+        defaultItem: () => ({
+          nome: "Nome",
+          cognome: "Cognome",
+          ruolo: "Psicologo",
+          bio: "Inserisci la biografia qui",
+          ordine: "100",
+        }),
         fields: [
           {
             type: "string",
@@ -175,7 +182,12 @@ export default defineConfig({
           },
         ],
         ui: {
-          router: ({ document }) => `/professionisti#${document._sys.filename}`,
+          router: ({ document }) => {
+            if (document._sys?.filename) {
+              return `/professionisti/${document._sys.filename}`
+            }
+            return `/professionisti`
+          },
         },
       },
     ],
