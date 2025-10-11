@@ -3,11 +3,8 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-// Email addresses mapping
-const EMAIL_MAPPING = {
-  psicoterapia: 'psicoterapiabreve.cmt@outlook.it',
-  counselling: 'counselling@cmt-ig.org',
-} as const
+// Email unica per tutti i servizi
+const TO_EMAIL = 'counselling.psicoterapia.cmt@gmail.com'
 
 export async function POST(request: Request) {
   try {
@@ -26,8 +23,8 @@ export async function POST(request: Request) {
       formData 
     } = body
 
-    // Determina l'email di destinazione
-    const toEmail = EMAIL_MAPPING[servizio as keyof typeof EMAIL_MAPPING] || EMAIL_MAPPING.counselling
+    // Tutte le email vengono inviate a counselling.psicoterapia.cmt@gmail.com
+    const toEmail = TO_EMAIL
 
     // Crea l'HTML dell'email
     const htmlContent = `
