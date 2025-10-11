@@ -115,9 +115,9 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="p-8">
-              <CardContent className="space-y-6">
-                <p className="text-lg leading-relaxed text-muted-foreground">
+            <Card className="p-8 overflow-hidden">
+              <CardContent className="space-y-6 min-w-0">
+                <p className="text-lg leading-relaxed text-muted-foreground break-words">
                   La rete <strong className="text-foreground">Psicoterapia Breve Counselling CMT</strong> è composta da
                   professionisti psicologi e psicoterapeuti con esperienza nell'intervento psicologico breve,
                   appartenenti al <strong className="text-foreground">Control Mastery Theory Italian Group</strong> (
@@ -163,8 +163,8 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
           >
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full">
-                  <CardContent className="space-y-4">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
+                  <CardContent className="space-y-4 min-w-0">
                     <motion.div
                       className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
                       whileHover={{ rotate: 360 }}
@@ -173,7 +173,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
                       <MapPin className="h-6 w-6 text-primary" />
                     </motion.div>
                     <h3 className="font-semibold text-lg">Studi in Tutta Italia</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed break-words">
                       I nostri professionisti operano a Roma, Milano e altre città italiane presso i loro studi privati.
                     </p>
                   </CardContent>
@@ -183,8 +183,8 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
 
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full">
-                  <CardContent className="space-y-4">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
+                  <CardContent className="space-y-4 min-w-0">
                     <motion.div
                       className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto"
                       whileHover={{ rotate: 360 }}
@@ -193,7 +193,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
                       <Video className="h-6 w-6 text-secondary" />
                     </motion.div>
                     <h3 className="font-semibold text-lg">Videoconsulenze Online</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed break-words">
                       Offriamo anche la possibilità di effettuare sedute online, comodamente da casa tua.
                     </p>
                   </CardContent>
@@ -232,7 +232,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
           >
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
                   <CardContent className="space-y-4">
                     <motion.div
                       className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
@@ -253,7 +253,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
 
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
                   <CardContent className="space-y-4">
                     <motion.div
                       className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto"
@@ -273,7 +273,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
 
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
                   <CardContent className="space-y-4">
                     <motion.div
                       className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
@@ -293,7 +293,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
 
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
                   <CardContent className="space-y-4">
                     <motion.div
                       className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto"
@@ -343,7 +343,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
           >
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="p-8 hover:shadow-lg transition-shadow h-full">
+                <Card className="p-8 hover:shadow-lg transition-shadow h-full overflow-hidden">
                   <CardContent className="space-y-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-2xl font-semibold">Psicoterapia Breve</h3>
@@ -394,7 +394,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
 
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="p-8 hover:shadow-lg transition-shadow h-full">
+                <Card className="p-8 hover:shadow-lg transition-shadow h-full overflow-hidden">
                   <CardContent className="space-y-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-2xl font-semibold">Counselling Psicologico</h3>
@@ -648,3 +648,6 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
     </div>
   )
 }
+
+
+

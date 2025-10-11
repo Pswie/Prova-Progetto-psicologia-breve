@@ -294,7 +294,7 @@ export default function FormazioneClientPage() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-8 hover:shadow-lg transition-all duration-300 border-t-4 border-t-primary h-full">
+                    <Card className="p-8 hover:shadow-lg transition-all duration-300 border-t-4 border-t-primary h-full overflow-hidden">
                       <CardHeader className="pb-6">
                         <div className="flex items-start gap-4 mb-4">
                           <motion.div
@@ -397,7 +397,7 @@ export default function FormazioneClientPage() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                    <Card className="p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
                       <CardContent className="space-y-4">
                         <motion.div
                           className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
@@ -442,7 +442,7 @@ export default function FormazioneClientPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="p-8">
+            <Card className="p-8 overflow-hidden">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Selezione Servizio */}
                 <div className="space-y-2">
@@ -635,7 +635,7 @@ export default function FormazioneClientPage() {
           >
             {faq.map((item, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <Card className="p-6 hover:shadow-md transition-shadow">
+                <Card className="p-6 hover:shadow-md transition-shadow overflow-hidden">
                   <h3 className="font-semibold text-lg mb-3 flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                     {item.question}
@@ -707,3 +707,5 @@ export default function FormazioneClientPage() {
     </div>
   )
 }
+
+

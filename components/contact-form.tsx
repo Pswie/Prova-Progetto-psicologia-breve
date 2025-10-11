@@ -61,7 +61,7 @@ export function ContactForm() {
 
   if (submitStatus === "success") {
     return (
-      <Card className="p-8 text-center border-primary/20 bg-primary/5">
+      <Card className="p-8 text-center border-primary/20 bg-primary/5 overflow-hidden">
         <CardContent className="space-y-4">
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle className="h-8 w-8 text-primary" />
@@ -76,7 +76,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="p-6">
+    <Card className="p-6 overflow-hidden">
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Nome e Cognome */}
@@ -206,11 +206,9 @@ export function ContactForm() {
             <div className="grid gap-1.5 leading-none">
               <Label
                 htmlFor="privacy"
-                className="text-sm font-normal leading-relaxed peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                className="text-sm font-normal leading-relaxed peer-disabled:cursor-not-allowed peer-disabled:opacity-70 whitespace-normal"
               >
-                Accetto il trattamento dei dati personali secondo la{" "}
-                <span className="text-primary underline cursor-pointer">Privacy Policy</span> e autorizzo l'invio di
-                comunicazioni relative ai servizi richiesti. *
+                Accetto il trattamento dei dati personali secondo la <span className="text-primary underline cursor-pointer">Privacy Policy</span> e autorizzo l'invio di comunicazioni relative ai servizi richiesti. *
               </Label>
             </div>
           </div>
@@ -238,3 +236,4 @@ export function ContactForm() {
     </Card>
   )
 }
+

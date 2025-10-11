@@ -191,7 +191,7 @@ export default function ServiziClientPage() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-8 hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary h-full">
+                    <Card className="p-8 hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary h-full overflow-hidden">
                       <CardHeader className="pb-6">
                         <div className="flex items-start justify-between">
                           <div className="flex items-center gap-4">
@@ -302,7 +302,7 @@ export default function ServiziClientPage() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow h-full text-center">
+                    <Card className="p-6 hover:shadow-lg transition-shadow h-full text-center overflow-hidden">
                       <CardContent className="space-y-4">
                         <motion.div
                           className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
@@ -351,7 +351,7 @@ export default function ServiziClientPage() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                    <Card className="p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
                       <CardContent className="space-y-4">
                         <div className="flex items-center gap-3">
                           <motion.div
@@ -431,4 +431,5 @@ export default function ServiziClientPage() {
     </div>
   )
 }
+
 
