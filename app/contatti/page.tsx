@@ -152,28 +152,28 @@ export default function ContattiPage() {
                 {infoContatti.map((info, index) => {
                   const IconComponent = info.icon
                   const content = (
-                    <Card key={index} className="p-4 hover:shadow-lg transition-shadow h-full">
+                    <Card key={index} className="p-4 hover:shadow-lg transition-shadow h-full overflow-hidden">
                       <CardContent className="space-y-3">
                         <div className="flex items-center gap-3">
-                          <div className={`w-10 h-10 bg-${info.color}/10 rounded-lg flex items-center justify-center`}>
+                          <div className={`w-10 h-10 bg-${info.color}/10 rounded-lg flex items-center justify-center flex-shrink-0`}>
                             <IconComponent className={`h-5 w-5 text-${info.color}`} />
                           </div>
-                          <div>
-                            <h3 className="font-semibold">{info.title}</h3>
+                          <div className="min-w-0 flex-1">
+                            <h3 className="font-semibold truncate">{info.title}</h3>
                           </div>
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           {info.link ? (
                             <a 
                               href={info.link} 
-                              className="font-medium text-foreground hover:text-primary transition-colors block"
+                              className="font-medium text-foreground hover:text-primary transition-colors block break-words"
                             >
                               {info.value}
                             </a>
                           ) : (
-                            <p className="font-medium text-foreground">{info.value}</p>
+                            <p className="font-medium text-foreground break-words">{info.value}</p>
                           )}
-                          <p className="text-sm text-muted-foreground">{info.description}</p>
+                          <p className="text-sm text-muted-foreground break-words">{info.description}</p>
                         </div>
                       </CardContent>
                     </Card>
