@@ -295,9 +295,9 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
               <motion.div {...scaleOnHover}>
                 <Card className="p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow h-full overflow-hidden">
                   <CardContent className="space-y-3 sm:space-y-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-2xl font-semibold">Psicoterapia Breve</h3>
-                      <span className="text-sm font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-2">
+                      <h3 className="text-xl sm:text-2xl font-semibold">Psicoterapia Breve</h3>
+                      <span className="text-sm font-medium bg-primary/10 text-primary px-3 py-1 rounded-full w-fit">
                         6 mesi
                       </span>
                     </div>
@@ -346,9 +346,9 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
               <motion.div {...scaleOnHover}>
                 <Card className="p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow h-full overflow-hidden">
                   <CardContent className="space-y-3 sm:space-y-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-2xl font-semibold">Counselling Psicologico</h3>
-                      <span className="text-sm font-medium bg-secondary/10 text-secondary px-3 py-1 rounded-full">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-2">
+                      <h3 className="text-xl sm:text-2xl font-semibold">Counselling Psicologico</h3>
+                      <span className="text-sm font-medium bg-secondary/10 text-secondary px-3 py-1 rounded-full w-fit">
                         1 mese
                       </span>
                     </div>
