@@ -17,7 +17,7 @@ export default function Footer() {
                 height={64}
                 className="h-16 w-auto object-contain"
               />
-              <h3 className="text-lg font-semibold text-primary">CMT Psicoterapia</h3>
+              <h3 className="text-lg font-semibold text-primary">Psicoterapia Breve & Counselling CMT</h3>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Rete di professionisti specializzati in Psicoterapia Breve e Counselling CMT. Un approccio basato sulla
