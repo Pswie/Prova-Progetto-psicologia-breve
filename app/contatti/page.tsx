@@ -139,6 +139,12 @@ export default function ContattiPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">Richiedi un Consulto</h2>
+              <ContactForm />
+            </div>
+
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
@@ -195,12 +201,6 @@ export default function ContattiPage() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Richiedi un Consulto</h2>
-              <ContactForm />
             </div>
           </div>
         </div>

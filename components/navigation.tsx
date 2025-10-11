@@ -30,15 +30,18 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/" className="flex flex-col items-start gap-1">
+            <Link href="/" className="flex items-center gap-3">
               <Image 
                 src="/Logo.png" 
                 alt="CMT Logo" 
-                width={80}
-                height={40}
-                className="h-8 w-auto object-contain"
+                width={48}
+                height={48}
+                className="h-12 w-12 object-contain"
               />
-              <span className="text-xs font-semibold text-primary whitespace-nowrap">Psicoterapia Breve & Counselling CMT</span>
+              <div className="flex flex-col">
+                <span className="text-sm font-semibold text-primary leading-tight">Psicoterapia Breve</span>
+                <span className="text-sm font-semibold text-primary leading-tight">Counselling CMT</span>
+              </div>
             </Link>
           </motion.div>
 
