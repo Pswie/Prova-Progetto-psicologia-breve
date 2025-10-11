@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
@@ -8,7 +9,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-primary">CMT Psicoterapia</h3>
+            <div className="flex flex-col items-start space-y-3">
+              <Image 
+                src="/Logo.png" 
+                alt="CMT Logo" 
+                width={128}
+                height={64}
+                className="h-16 w-auto object-contain"
+              />
+              <h3 className="text-lg font-semibold text-primary">CMT Psicoterapia</h3>
+            </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Rete di professionisti specializzati in Psicoterapia Breve e Counselling CMT. Un approccio basato sulla
               Control Mastery Theory per il tuo benessere.

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -29,8 +30,15 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/" className="text-xl font-semibold text-primary">
-              CMT Psicoterapia
+            <Link href="/" className="flex flex-col items-start gap-1">
+              <Image 
+                src="/Logo.png" 
+                alt="CMT Logo" 
+                width={80}
+                height={40}
+                className="h-8 w-auto object-contain"
+              />
+              <span className="text-xs font-semibold text-primary whitespace-nowrap">Psicoterapia Breve & Counselling CMT</span>
             </Link>
           </motion.div>
 
