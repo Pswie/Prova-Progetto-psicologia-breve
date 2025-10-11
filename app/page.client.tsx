@@ -98,60 +98,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
       {/* Chi Siamo Section */}
       <section id="chi-siamo" className="py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">Chi Siamo</h2>
-          </motion.div>
 
-          <motion.div
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Card className="p-8 overflow-hidden">
-              <CardContent className="space-y-6 min-w-0">
-                <p className="text-lg leading-relaxed text-muted-foreground break-words">
-                  La rete <strong className="text-foreground">Psicoterapia Breve Counselling CMT</strong> è composta da
-                  professionisti psicologi e psicoterapeuti con esperienza nell'intervento psicologico breve,
-                  appartenenti al <strong className="text-foreground">Control Mastery Theory Italian Group</strong> (
-                  <a
-                    href="http://www.cmt-ig.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    www.cmt-ig.org
-                  </a>
-                  ).
-                </p>
-                <p className="text-lg leading-relaxed text-muted-foreground">
-                  I professionisti della rete operano a{" "}
-                  <strong className="text-foreground">Roma, Milano e altre città italiane</strong>, presso i loro studi
-                  privati o attraverso <strong className="text-foreground">videoconsulenze online</strong>. Il loro
-                  lavoro clinico è guidato dal modello teorico della Control Mastery Theory e presta particolare
-                  attenzione alla peculiarità delle dinamiche che caratterizzano gli interventi psicologici brevi.
-                </p>
-                <div className="bg-primary/5 p-6 rounded-lg border-l-4 border-primary">
-                  <p className="text-lg leading-relaxed">
-                    La rete Psicoterapia Breve CMT e la rete Counselling CMT si pongono lo scopo di fornire un servizio
-                    di counselling psicologico e un servizio di psicoterapia breve,{" "}
-                    <strong className="text-primary">a costi accessibili</strong>, fondati su un modello teorico
-                    validato empiricamente.
-                  </p>
-                </div>
-                <p className="text-xl font-semibold text-center text-primary">
-                  Un Centro di Counselling Psicologico e Psicoterapia Breve alla portata di tutti
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
 
           {/* Location and Online Services */}
           <motion.div
