@@ -191,25 +191,25 @@ export default function ServiziClientPage() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-8 hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary h-full overflow-hidden">
-                      <CardHeader className="pb-6">
+                    <Card className="p-4 sm:p-6 md:p-8 hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary h-full overflow-hidden">
+                      <CardHeader className="pb-4 sm:pb-6 p-0">
                         <div className="flex items-start justify-between">
-                          <div className="flex items-center gap-4">
+                          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full">
                             <motion.div
-                              className={`w-12 h-12 bg-${servizio.color}/10 rounded-lg flex items-center justify-center`}
+                              className={`w-10 h-10 sm:w-12 sm:h-12 bg-${servizio.color}/10 rounded-lg flex items-center justify-center flex-shrink-0`}
                               whileHover={{ rotate: 360 }}
                               transition={{ duration: 0.5 }}
                             >
-                              <IconComponent className={`h-6 w-6 text-${servizio.color}`} />
+                              <IconComponent className={`h-5 w-5 sm:h-6 sm:w-6 text-${servizio.color}`} />
                             </motion.div>
-                            <div>
-                              <CardTitle className="text-xl mb-2">{servizio.title}</CardTitle>
-                              <div className="flex gap-2">
+                            <div className="flex-1 min-w-0">
+                              <CardTitle className="text-lg sm:text-xl mb-2 break-words">{servizio.title}</CardTitle>
+                              <div className="flex flex-wrap gap-2">
                                 <Badge variant="secondary" className="text-xs">
                                   <Clock className="h-3 w-3 mr-1" />
                                   {servizio.duration}
                                 </Badge>
-                                <Badge variant="outline" className="text-xs">
+                                <Badge variant="outline" className="text-xs whitespace-nowrap">
                                   {servizio.price}
                                 </Badge>
                               </div>
@@ -217,8 +217,8 @@ export default function ServiziClientPage() {
                           </div>
                         </div>
                       </CardHeader>
-                      <CardContent className="space-y-6">
-                        <p className="text-muted-foreground leading-relaxed">{servizio.description}</p>
+                      <CardContent className="space-y-4 sm:space-y-6 p-0 pt-4 sm:pt-0">
+                        <p className="text-muted-foreground leading-relaxed text-sm sm:text-base break-words">{servizio.description}</p>
 
                         <div className="space-y-3">
                           <h4 className="font-medium text-sm text-foreground">Cosa Include:</h4>
@@ -226,14 +226,14 @@ export default function ServiziClientPage() {
                             {servizio.benefits.map((benefit, idx) => (
                               <motion.div
                                 key={idx}
-                                className="flex items-center gap-2 text-sm"
+                                className="flex items-start gap-2 text-sm"
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
                               >
-                                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
-                                <span className="text-muted-foreground">{benefit}</span>
+                                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                                <span className="text-muted-foreground break-words flex-1">{benefit}</span>
                               </motion.div>
                             ))}
                           </div>
