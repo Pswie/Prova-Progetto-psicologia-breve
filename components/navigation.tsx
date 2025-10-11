@@ -38,9 +38,9 @@ export default function Navigation() {
                 height={48}
                 className="h-12 w-12 object-contain"
               />
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center">
                 <span className="text-sm font-semibold text-primary leading-tight">Psicoterapia Breve</span>
-                <span className="text-sm font-semibold text-primary leading-tight">&</span>
+                <span className="text-xs font-semibold text-primary leading-tight">&</span>
                 <span className="text-sm font-semibold text-primary leading-tight">Counselling CMT</span>
               </div>
             </Link>
