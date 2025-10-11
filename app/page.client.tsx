@@ -95,63 +95,8 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
         </div>
       </section>
 
-      {/* Chi Siamo Section */}
-      <section id="chi-siamo" className="py-16 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-
-          {/* Location and Online Services */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <motion.div variants={fadeInUp}>
-              <motion.div {...scaleOnHover}>
-                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                  <CardContent className="space-y-4 min-w-0">
-                    <motion.div
-                      className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <MapPin className="h-6 w-6 text-primary" />
-                    </motion.div>
-                    <h3 className="font-semibold text-lg">Studi in Tutta Italia</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed break-words">
-                      I nostri professionisti operano a Roma, Milano e altre città italiane presso i loro studi privati.
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </motion.div>
-
-            <motion.div variants={fadeInUp}>
-              <motion.div {...scaleOnHover}>
-                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                  <CardContent className="space-y-4 min-w-0">
-                    <motion.div
-                      className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <Video className="h-6 w-6 text-secondary" />
-                    </motion.div>
-                    <h3 className="font-semibold text-lg">Videoconsulenze Online</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed break-words">
-                      Offriamo anche la possibilità di effettuare sedute online, comodamente da casa tua.
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Features Section */}
+            {/* Features Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -260,6 +205,64 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
           </motion.div>
         </div>
       </section>
+
+      {/* Chi Siamo Section */}
+      <section id="chi-siamo" className="py-16 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+          {/* Location and Online Services */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div variants={fadeInUp}>
+              <motion.div {...scaleOnHover}>
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
+                  <CardContent className="space-y-4 min-w-0">
+                    <motion.div
+                      className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </motion.div>
+                    <h3 className="font-semibold text-lg">Studi in Tutta Italia</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed break-words">
+                      I nostri professionisti operano a Roma, Milano e altre città italiane presso i loro studi privati.
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <motion.div {...scaleOnHover}>
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
+                  <CardContent className="space-y-4 min-w-0">
+                    <motion.div
+                      className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <Video className="h-6 w-6 text-secondary" />
+                    </motion.div>
+                    <h3 className="font-semibold text-lg">Videoconsulenze Online</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed break-words">
+                      Offriamo anche la possibilità di effettuare sedute online, comodamente da casa tua.
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+
 
       {/* Dynamic CMT Section */}
       <CMTDynamicSection />
