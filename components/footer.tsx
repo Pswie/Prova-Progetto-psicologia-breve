@@ -114,6 +114,9 @@ export default function Footer() {
           <p className="text-center text-sm text-muted-foreground">
             © 2025 Rete Psicoterapia Breve e Counselling CMT. Tutti i diritti riservati.
           </p>
+          <p className="text-center text-xs text-muted-foreground mt-2">
+            Sito web realizzato da Pasquale Langellotti
+          </p>
         </div>
       </div>
     </footer>

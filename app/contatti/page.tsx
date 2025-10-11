@@ -199,7 +199,7 @@ export default function ContattiPage() {
 
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Invia un Messaggio</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">Richiedi un Consulto</h2>
               <ContactForm />
             </div>
           </div>

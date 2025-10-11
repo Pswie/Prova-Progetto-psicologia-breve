@@ -18,8 +18,11 @@ export function ContactForm() {
     cognome: "",
     email: "",
     telefono: "",
-    tipoRichiesta: "",
-    messaggio: "",
+    motivazione: "",
+    preferenzeGiornoOrario: "",
+    preferenzeZona: "",
+    sessoTerapeuta: "",
+    etaTerapeuta: "",
     privacy: false,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -40,8 +43,11 @@ export function ContactForm() {
           cognome: "",
           email: "",
           telefono: "",
-          tipoRichiesta: "",
-          messaggio: "",
+          motivazione: "",
+          preferenzeGiornoOrario: "",
+          preferenzeZona: "",
+          sessoTerapeuta: "",
+          etaTerapeuta: "",
           privacy: false,
         })
         setSubmitStatus("idle")
@@ -60,9 +66,9 @@ export function ContactForm() {
           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle className="h-8 w-8 text-primary" />
           </div>
-          <h3 className="text-xl font-semibold text-primary">Messaggio Inviato!</h3>
+          <h3 className="text-xl font-semibold text-primary">Richiesta Inviata!</h3>
           <p className="text-muted-foreground">
-            Grazie per avermi contattato. Ti risponderò entro 24 ore per programmare la tua consulenza gratuita.
+            Grazie per averci contattato. Ti ricontatteremo entro 24 ore per assegnarti un terapeuta della rete CMT in base alle tue preferenze.
           </p>
         </CardContent>
       </Card>
@@ -122,35 +128,71 @@ export function ContactForm() {
             </div>
           </div>
 
-          {/* Tipo di Richiesta */}
+          {/* Motivazione della richiesta */}
           <div className="space-y-2">
-            <Label htmlFor="tipoRichiesta">Tipo di Richiesta *</Label>
-            <Select value={formData.tipoRichiesta} onValueChange={(value) => handleInputChange("tipoRichiesta", value)}>
-              <SelectTrigger>
-                <SelectValue placeholder="Seleziona il tipo di richiesta" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="consulenza">Consulenza Gratuita</SelectItem>
-                <SelectItem value="individuale">Terapia Individuale</SelectItem>
-                <SelectItem value="coppia">Terapia di Coppia</SelectItem>
-                <SelectItem value="gruppo">Terapia di Gruppo</SelectItem>
-                <SelectItem value="informazioni">Informazioni Generali</SelectItem>
-                <SelectItem value="altro">Altro</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Messaggio */}
-          <div className="space-y-2">
-            <Label htmlFor="messaggio">Messaggio *</Label>
+            <Label htmlFor="motivazione">Motivazione della richiesta *</Label>
             <Textarea
-              id="messaggio"
-              value={formData.messaggio}
-              onChange={(e) => handleInputChange("messaggio", e.target.value)}
-              placeholder="Descrivi brevemente la tua richiesta o le tue esigenze..."
-              rows={5}
+              id="motivazione"
+              value={formData.motivazione}
+              onChange={(e) => handleInputChange("motivazione", e.target.value)}
+              placeholder="Descrivi brevemente il motivo per cui stai cercando un supporto psicologico..."
+              rows={4}
               required
             />
+          </div>
+
+          {/* Preferenze di giorno e orario */}
+          <div className="space-y-2">
+            <Label htmlFor="preferenzeGiornoOrario">Preferenze di giorno e orario</Label>
+            <Textarea
+              id="preferenzeGiornoOrario"
+              value={formData.preferenzeGiornoOrario}
+              onChange={(e) => handleInputChange("preferenzeGiornoOrario", e.target.value)}
+              placeholder="Es. Lunedì e Mercoledì pomeriggio, Sabato mattina, ecc."
+              rows={2}
+            />
+          </div>
+
+          {/* Preferenze di zona */}
+          <div className="space-y-2">
+            <Label htmlFor="preferenzeZona">Preferenze di zona</Label>
+            <Input
+              id="preferenzeZona"
+              value={formData.preferenzeZona}
+              onChange={(e) => handleInputChange("preferenzeZona", e.target.value)}
+              placeholder="Es. Roma centro, Milano zona Loreto, Online, ecc."
+            />
+          </div>
+
+          {/* Sesso ed età del terapeuta */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="sessoTerapeuta">Sesso del terapeuta</Label>
+              <Select value={formData.sessoTerapeuta} onValueChange={(value) => handleInputChange("sessoTerapeuta", value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Nessuna preferenza" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="nessuna">Nessuna preferenza</SelectItem>
+                  <SelectItem value="maschile">Maschile</SelectItem>
+                  <SelectItem value="femminile">Femminile</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="etaTerapeuta">Età del terapeuta</Label>
+              <Select value={formData.etaTerapeuta} onValueChange={(value) => handleInputChange("etaTerapeuta", value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Nessuna preferenza" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="nessuna">Nessuna preferenza</SelectItem>
+                  <SelectItem value="giovane">Giovane (25-35 anni)</SelectItem>
+                  <SelectItem value="media">Media età (36-50 anni)</SelectItem>
+                  <SelectItem value="esperto">Esperto (oltre 50 anni)</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           {/* Privacy */}
@@ -189,7 +231,7 @@ export function ContactForm() {
           </Button>
 
           <p className="text-xs text-muted-foreground text-center">
-            Ti ricontatterò entro 24 ore. La prima consulenza è sempre gratuita e senza impegno.
+            Ti ricontatteremo entro 24 ore per assegnarti un terapeuta della rete CMT in base alle tue preferenze.
           </p>
         </form>
       </CardContent>
