@@ -211,8 +211,8 @@ export default function PsicoterapiaBreve() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 border-l-4 border-l-primary overflow-hidden">
-              <CardContent className="space-y-6">
+            <Card className="p-4 sm:p-6 md:p-8 border-l-4 border-l-primary overflow-hidden">
+              <CardContent className="space-y-4 sm:space-y-6">
                 <div className="flex items-center gap-3 mb-4">
                   <motion.div
                     className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
@@ -269,8 +269,8 @@ export default function PsicoterapiaBreve() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                      <CardContent className="space-y-4">
+                    <Card className="p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
+                      <CardContent className="space-y-3 sm:space-y-4">
                         <motion.div
                           className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
                           whileHover={{ rotate: 360 }}
@@ -318,8 +318,8 @@ export default function PsicoterapiaBreve() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow h-full text-center overflow-hidden">
-                      <CardContent className="space-y-4">
+                    <Card className="p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow h-full text-center overflow-hidden">
+                      <CardContent className="space-y-3 sm:space-y-4">
                         <motion.div
                           className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
                           whileHover={{ rotate: 360 }}
@@ -364,8 +364,8 @@ export default function PsicoterapiaBreve() {
               const IconComponent = item.icon
               return (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card className="p-6 h-full hover:shadow-lg transition-shadow overflow-hidden">
-                    <CardContent className="space-y-4">
+                  <Card className="p-4 sm:p-5 md:p-6 h-full hover:shadow-lg transition-shadow overflow-hidden">
+                    <CardContent className="space-y-3 sm:space-y-4">
                       <div className="flex items-center gap-4">
                         <motion.div
                           className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0"
@@ -421,7 +421,7 @@ export default function PsicoterapiaBreve() {
               return (
                 <motion.div key={index} variants={fadeInUp}>
                   <motion.div {...scaleOnHover}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
+                    <Card className="p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
                       <CardContent className="space-y-4 text-center">
                         <motion.div
                           className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto"
@@ -491,8 +491,8 @@ export default function PsicoterapiaBreve() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.div variants={fadeInUp}>
-              <Card className="p-6 h-full border-l-4 border-l-primary overflow-hidden">
-                <CardContent className="space-y-4">
+              <Card className="p-4 sm:p-5 md:p-6 h-full border-l-4 border-l-primary overflow-hidden">
+                <CardContent className="space-y-3 sm:space-y-4">
                   <div className="flex items-center gap-3">
                     <motion.div
                       className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center"
@@ -512,8 +512,8 @@ export default function PsicoterapiaBreve() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <Card className="p-6 h-full border-l-4 border-l-secondary overflow-hidden">
-                <CardContent className="space-y-4">
+              <Card className="p-4 sm:p-5 md:p-6 h-full border-l-4 border-l-secondary overflow-hidden">
+                <CardContent className="space-y-3 sm:space-y-4">
                   <div className="flex items-center gap-3">
                     <motion.div
                       className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center"
@@ -540,7 +540,7 @@ export default function PsicoterapiaBreve() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="p-6 bg-muted/30 overflow-hidden">
+            <Card className="p-4 sm:p-5 md:p-6 bg-muted/30 overflow-hidden">
               <CardContent className="space-y-3">
                 <div className="flex items-start gap-3">
                   <Award className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
@@ -568,7 +568,7 @@ export default function PsicoterapiaBreve() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 overflow-hidden">
+            <Card className="p-4 sm:p-6 md:p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 overflow-hidden">
               <CardContent className="text-center space-y-6">
                 <Target className="h-12 w-12 text-primary mx-auto" />
                 <h2 className="text-3xl md:text-4xl font-bold text-balance">Pronto a Iniziare?</h2>
@@ -627,4 +627,5 @@ export default function PsicoterapiaBreve() {
     </div>
   )
 }
+
 

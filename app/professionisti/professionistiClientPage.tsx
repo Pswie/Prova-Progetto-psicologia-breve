@@ -90,14 +90,14 @@ export default function ProfessionistiClientPage({ membri = [] }: Professionisti
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
-                      <CardContent className="p-6">
+                      <CardContent className="p-4 sm:p-5 md:p-6">
                         <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
                           {membro.nome} {membro.cognome}
                         </h3>
                         <p className="text-muted-foreground mb-2">{membro.ruolo}</p>
-                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{membro.bio}</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground break-words mb-4 line-clamp-2">{membro.bio}</p>
                         {membro.citta && (
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                          <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground break-words mb-2">
                             <MapPin className="h-4 w-4 text-primary" />
                             <span>{membro.citta}</span>
                           </div>
@@ -156,4 +156,5 @@ export default function ProfessionistiClientPage({ membri = [] }: Professionisti
     </div>
   )
 }
+
 

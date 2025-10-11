@@ -125,7 +125,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3 sm:space-y-4">
                     <motion.div
                       className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
                       whileHover={{ rotate: 360 }}
@@ -146,7 +146,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3 sm:space-y-4">
                     <motion.div
                       className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto"
                       whileHover={{ rotate: 360 }}
@@ -166,7 +166,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3 sm:space-y-4">
                     <motion.div
                       className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto"
                       whileHover={{ rotate: 360 }}
@@ -186,7 +186,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3 sm:space-y-4">
                     <motion.div
                       className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto"
                       whileHover={{ rotate: 360 }}
@@ -293,8 +293,8 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
           >
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="p-8 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                  <CardContent className="space-y-4">
+                <Card className="p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow h-full overflow-hidden">
+                  <CardContent className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-2xl font-semibold">Psicoterapia Breve</h3>
                       <span className="text-sm font-medium bg-primary/10 text-primary px-3 py-1 rounded-full">
@@ -344,8 +344,8 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
 
             <motion.div variants={fadeInUp}>
               <motion.div {...scaleOnHover}>
-                <Card className="p-8 hover:shadow-lg transition-shadow h-full overflow-hidden">
-                  <CardContent className="space-y-4">
+                <Card className="p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow h-full overflow-hidden">
+                  <CardContent className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-2xl font-semibold">Counselling Psicologico</h3>
                       <span className="text-sm font-medium bg-secondary/10 text-secondary px-3 py-1 rounded-full">
@@ -487,7 +487,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
                           )}
                         </div>
 
-                        <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                        <h3 className="text-lg sm:text-xl font-semibold break-words mb-3 group-hover:text-primary transition-colors line-clamp-2">
                           {item.title}
                         </h3>
 
@@ -598,6 +598,7 @@ export default function HomePageClient({ latestContent }: HomePageClientProps) {
     </div>
   )
 }
+
 
 
 

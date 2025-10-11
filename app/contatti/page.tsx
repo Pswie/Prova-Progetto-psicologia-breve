@@ -217,8 +217,8 @@ export default function ContattiPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="p-6">
-              <CardContent className="space-y-4 text-center">
+            <Card className="p-4 sm:p-5 md:p-6">
+              <CardContent className="space-y-3 sm:space-y-4 text-center">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
@@ -229,8 +229,8 @@ export default function ContattiPage() {
               </CardContent>
             </Card>
 
-            <Card className="p-6">
-              <CardContent className="space-y-4 text-center">
+            <Card className="p-4 sm:p-5 md:p-6">
+              <CardContent className="space-y-3 sm:space-y-4 text-center">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
                   <Clock className="h-6 w-6 text-primary" />
                 </div>
@@ -241,8 +241,8 @@ export default function ContattiPage() {
               </CardContent>
             </Card>
 
-            <Card className="p-6">
-              <CardContent className="space-y-4 text-center">
+            <Card className="p-4 sm:p-5 md:p-6">
+              <CardContent className="space-y-3 sm:space-y-4 text-center">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
                   <MessageCircle className="h-6 w-6 text-primary" />
                 </div>
@@ -296,3 +296,4 @@ export default function ContattiPage() {
     </div>
   )
 }
+
