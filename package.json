@@ -60,6 +60,7 @@
     "recharts": "2.15.4",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
+    "resend": "^6.1.2",
     "sonner": "^1.7.4",
     "strip-markdown": "^6.0.0",
     "tailwind-merge": "^2.5.5",

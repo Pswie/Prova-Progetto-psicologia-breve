@@ -18,6 +18,7 @@ export function ContactForm() {
     cognome: "",
     email: "",
     telefono: "",
+    servizio: "counselling",
     motivazione: "",
     preferenzeGiornoOrario: "",
     preferenzeZona: "",
@@ -32,9 +33,19 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Errore nell\'invio')
+      }
+
       setSubmitStatus("success")
       // Reset form after success
       setTimeout(() => {
@@ -43,6 +54,7 @@ export function ContactForm() {
           cognome: "",
           email: "",
           telefono: "",
+          servizio: "counselling",
           motivazione: "",
           preferenzeGiornoOrario: "",
           preferenzeZona: "",
@@ -52,7 +64,12 @@ export function ContactForm() {
         })
         setSubmitStatus("idle")
       }, 3000)
-    }, 1500)
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (field: string, value: string | boolean) => {
@@ -101,6 +118,20 @@ export function ContactForm() {
                 required
               />
             </div>
+          </div>
+
+          {/* Tipo di Servizio */}
+          <div className="space-y-2">
+            <Label htmlFor="servizio">Servizio Richiesto *</Label>
+            <Select value={formData.servizio} onValueChange={(value) => handleInputChange("servizio", value)}>
+              <SelectTrigger id="servizio">
+                <SelectValue placeholder="Seleziona il servizio" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="counselling">Counselling Psicologico (1 mese)</SelectItem>
+                <SelectItem value="psicoterapia">Psicoterapia Breve (6 mesi)</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Email e Telefono */}
