@@ -40,6 +40,7 @@ export default function Navigation() {
               />
               <div className="flex flex-col">
                 <span className="text-sm font-semibold text-primary leading-tight">Psicoterapia Breve</span>
+                <span className="text-sm font-semibold text-primary leading-tight">&</span>
                 <span className="text-sm font-semibold text-primary leading-tight">Counselling CMT</span>
               </div>
             </Link>
