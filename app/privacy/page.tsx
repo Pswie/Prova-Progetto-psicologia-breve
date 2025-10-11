@@ -28,12 +28,11 @@ export default function PrivacyPage() {
         </div>
 
         <h2>1. Titolare del Trattamento</h2>
-        <div className="bg-muted/30 p-4 rounded-md not-prose mb-6">
-          <p className="font-medium">Control Mastery Theory Italian Group</p>
-          <p className="text-sm">Email: <a href="mailto:controlmasteryitalia@gmail.com" className="text-primary underline">controlmasteryitalia@gmail.com</a></p>
-          <p className="text-sm text-muted-foreground mt-2">
-            Il Titolare è responsabile del trattamento dei dati personali raccolti attraverso questo sito web.
-          </p>
+                <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-2">Titolare del Trattamento</h3>
+          <p className="text-sm mb-2">Rete Psicoterapia Breve e Counselling CMT</p>
+          <p className="text-sm"><strong>Counselling:</strong> <a href="mailto:counselling@cmt-ig.org" className="text-primary underline">counselling@cmt-ig.org</a> | Tel: 340 574 4646</p>
+          <p className="text-sm"><strong>Psicoterapia Breve:</strong> <a href="mailto:psicoterapiabreve.cmt@outlook.it" className="text-primary underline">psicoterapiabreve.cmt@outlook.it</a> | Tel: 329 212 5385</p>
         </div>
 
         <h2>2. Tipologie di Dati Raccolti</h2>
@@ -265,7 +264,8 @@ export default function PrivacyPage() {
             Per esercitare uno o più dei diritti sopra elencati, invia una richiesta scritta a:
           </p>
           <p className="text-sm font-medium">
-            📧 Email: <a href="mailto:controlmasteryitalia@gmail.com" className="text-primary underline">controlmasteryitalia@gmail.com</a>
+            📧 Counselling: <a href="mailto:counselling@cmt-ig.org" className="text-primary underline">counselling@cmt-ig.org</a><br />
+            📧 Psicoterapia Breve: <a href="mailto:psicoterapiabreve.cmt@outlook.it" className="text-primary underline">psicoterapiabreve.cmt@outlook.it</a>
           </p>
           <p className="text-sm mt-2">
             <strong>Tempi di risposta:</strong> Ti risponderemo entro <strong>30 giorni</strong> dalla ricezione della richiesta 

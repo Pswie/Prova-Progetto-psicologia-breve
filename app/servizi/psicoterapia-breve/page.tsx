@@ -573,18 +573,29 @@ export default function PsicoterapiaBreve() {
                 <Target className="h-12 w-12 text-primary mx-auto" />
                 <h2 className="text-3xl md:text-4xl font-bold text-balance">Pronto a Iniziare?</h2>
                 <p className="text-lg text-muted-foreground text-balance leading-relaxed max-w-2xl mx-auto">
-                  Per maggiori informazioni e richiedere un appuntamento, contattaci via email o telefono
+                  Per maggiori informazioni e richiedere un appuntamento per la Psicoterapia Breve, contattaci
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                   <motion.a
-                    href="mailto:counselling@cmt-ig.org"
+                    href="mailto:psicoterapiabreve.cmt@outlook.it"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <Button size="lg" className="text-lg px-8 group">
                       <Mail className="mr-2 h-5 w-5" />
-                      counselling@cmt-ig.org
+                      psicoterapiabreve.cmt@outlook.it
+                    </Button>
+                  </motion.a>
+                  
+                  <motion.a
+                    href="tel:3292125385"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button variant="outline" size="lg" className="text-lg px-8 group">
+                      <Phone className="mr-2 h-5 w-5" />
+                      329 212 5385
                     </Button>
                   </motion.a>
 

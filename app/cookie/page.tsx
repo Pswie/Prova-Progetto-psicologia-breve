@@ -241,10 +241,9 @@ export default function CookiePage() {
           <li>Revoca del consenso</li>
         </ul>
         <p>
-          Per esercitare questi diritti, contattaci all'indirizzo:{" "}
-          <a href="mailto:controlmasteryitalia@gmail.com" className="text-primary underline">
-            controlmasteryitalia@gmail.com
-          </a>
+          Per esercitare questi diritti, contattaci agli indirizzi:<br />
+          <strong>Counselling:</strong> <a href="mailto:counselling@cmt-ig.org" className="text-primary underline">counselling@cmt-ig.org</a><br />
+          <strong>Psicoterapia Breve:</strong> <a href="mailto:psicoterapiabreve.cmt@outlook.it" className="text-primary underline">psicoterapiabreve.cmt@outlook.it</a>
         </p>
 
         <h2>6. Aggiornamenti della Cookie Policy</h2>
@@ -266,7 +265,8 @@ export default function CookiePage() {
         <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 my-6 not-prose">
           <p className="font-semibold text-sm mb-2">📧 Hai domande o dubbi sui cookie?</p>
           <p className="text-sm">
-            Contattaci: <a href="mailto:controlmasteryitalia@gmail.com" className="text-primary underline font-medium">controlmasteryitalia@gmail.com</a>
+            <strong>Counselling:</strong> <a href="mailto:counselling@cmt-ig.org" className="text-primary underline font-medium">counselling@cmt-ig.org</a> | Tel: 340 574 4646<br />
+            <strong>Psicoterapia Breve:</strong> <a href="mailto:psicoterapiabreve.cmt@outlook.it" className="text-primary underline font-medium">psicoterapiabreve.cmt@outlook.it</a> | Tel: 329 212 5385
           </p>
           <p className="text-sm mt-2">
             Consulta anche la nostra <a href="/privacy" className="text-primary underline font-medium">Privacy Policy</a> 

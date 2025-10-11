@@ -10,8 +10,8 @@ import { Mail, Phone, MapPin, Clock, Calendar, MessageCircle, Shield, CheckCircl
 export const metadata: Metadata = genMeta({
   title: "Contatti",
   description:
-    "Contatta la rete Psicoterapia Breve e Counselling CMT. Email: counselling@cmt-ig.org, Tel: 340 574 4646. Prima consulenza gratuita.",
-  keywords: ["contatti", "prenotazione", "appuntamento", "email", "telefono"],
+    "Contatta la rete Psicoterapia Breve e Counselling CMT. Counselling: 340 574 4646, counselling@cmt-ig.org | Psicoterapia: 329 212 5385, psicoterapiabreve.cmt@outlook.it",
+  keywords: ["contatti", "prenotazione", "appuntamento", "email", "telefono", "counselling", "psicoterapia"],
   path: "/contatti",
 })
 
@@ -40,69 +40,76 @@ export default function ContattiPage() {
   const infoContatti = [
     {
       icon: Phone,
-      title: "Telefono",
-      value: "+39 123 456 7890",
-      description: "Chiamami per informazioni o per prenotare",
+      title: "Counselling",
+      value: "340 574 4646",
+      description: "Per informazioni su Counselling Psicologico CMT",
       color: "primary",
+      type: "phone",
+      link: "tel:3405744646",
     },
     {
       icon: Mail,
-      title: "Email",
-      value: "info@cmtpsicoterapia.it",
-      description: "Scrivimi per qualsiasi domanda",
+      title: "Email Counselling",
+      value: "counselling@cmt-ig.org",
+      description: "Richieste e informazioni su Counselling",
       color: "secondary",
+      type: "email",
+      link: "mailto:counselling@cmt-ig.org",
+    },
+    {
+      icon: Phone,
+      title: "Psicoterapia Breve",
+      value: "329 212 5385",
+      description: "Per informazioni su Psicoterapia Breve CMT",
+      color: "primary",
+      type: "phone",
+      link: "tel:3292125385",
+    },
+    {
+      icon: Mail,
+      title: "Email Psicoterapia",
+      value: "psicoterapiabreve.cmt@outlook.it",
+      description: "Richieste e informazioni su Psicoterapia Breve",
+      color: "secondary",
+      type: "email",
+      link: "mailto:psicoterapiabreve.cmt@outlook.it",
     },
     {
       icon: MapPin,
-      title: "Studio",
-      value: "Via Roma 123, 20121 Milano",
-      description: "Facilmente raggiungibile con i mezzi pubblici",
+      title: "Sedi",
+      value: "Roma, Milano e altre città",
+      description: "Rete di professionisti in tutta Italia",
       color: "primary",
+      type: "location",
+      link: null,
     },
-    {
-      icon: MessageCircle,
-      title: "WhatsApp",
-      value: "+39 123 456 7890",
-      description: "Messaggi rapidi e prenotazioni",
-      color: "secondary",
-    },
-  ]
-
-  const orari = [
-    { giorno: "Lunedì", orario: "9:00 - 18:00", disponibile: true },
-    { giorno: "Martedì", orario: "9:00 - 18:00", disponibile: true },
-    { giorno: "Mercoledì", orario: "9:00 - 18:00", disponibile: true },
-    { giorno: "Giovedì", orario: "9:00 - 18:00", disponibile: true },
-    { giorno: "Venerdì", orario: "9:00 - 17:00", disponibile: true },
-    { giorno: "Sabato", orario: "9:00 - 13:00", disponibile: true },
-    { giorno: "Domenica", orario: "Chiuso", disponibile: false },
   ]
 
   const faq = [
     {
       domanda: "Come posso prenotare un appuntamento?",
       risposta:
-        "Puoi prenotare chiamando il numero di telefono, inviando un'email o compilando il form di contatto. Ti ricontatterò entro 24 ore per confermare l'appuntamento.",
+        "Contatta direttamente il servizio di tuo interesse: per il Counselling usa il numero 340 574 4646 o l'email counselling@cmt-ig.org; per la Psicoterapia Breve usa il 329 212 5385 o psicoterapiabreve.cmt@outlook.it. Ti ricontatteremo entro 24 ore.",
     },
     {
       domanda: "Quanto dura una seduta?",
       risposta:
-        "Ogni seduta dura circa 50 minuti. La prima seduta può durare fino a 60 minuti per permettere una valutazione completa.",
+        "Le sedute di counselling durano 50 minuti per 4 incontri settimanali. La psicoterapia breve prevede 25 sedute settimanali di 50 minuti ciascuna, più valutazione iniziale e follow-up.",
     },
     {
-      domanda: "Accettate assicurazioni sanitarie?",
+      domanda: "Qual è la differenza tra i due servizi?",
       risposta:
-        "Sì, accettiamo le principali assicurazioni sanitarie. Contattaci per verificare la copertura della tua polizza.",
+        "Il Counselling Psicologico CMT è un intervento breve di 4 sedute per difficoltà specifiche. La Psicoterapia Breve CMT è un percorso strutturato di 6 mesi (25 sedute) per problematiche più complesse che richiedono un lavoro terapeutico approfondito.",
     },
     {
       domanda: "È possibile fare sedute online?",
       risposta:
-        "Sì, offro anche sedute online tramite piattaforme sicure per chi non può raggiungere lo studio o preferisce questa modalità.",
+        "Sì, entrambi i servizi sono disponibili anche in modalità online tramite piattaforme sicure, oltre agli incontri in presenza nelle sedi della rete CMT presenti in diverse città italiane.",
     },
     {
-      domanda: "Quanto costa una seduta?",
+      domanda: "Quali sono i costi?",
       risposta:
-        "I costi variano in base al tipo di terapia. La prima consulenza è sempre gratuita. Contattami per informazioni dettagliate sui prezzi.",
+        "Il Counselling ha un costo fisso di 250€ totali per le 4 sedute. La Psicoterapia Breve ha un costo variabile o di 50€ a seduta. Contattaci per informazioni dettagliate sui prezzi e le modalità di pagamento.",
     },
   ]
 
@@ -121,8 +128,8 @@ export default function ContattiPage() {
               <span className="text-primary">Contatti</span>
             </h1>
             <p className="text-xl text-muted-foreground text-balance mb-8 leading-relaxed">
-              Sono qui per rispondere alle tue domande e aiutarti a iniziare il tuo percorso di benessere. Contattami
-              per una consulenza gratuita.
+              La rete di professionisti CMT è qui per rispondere alle tue domande e aiutarti a iniziare il tuo percorso di benessere. 
+              Contattaci per ricevere informazioni sui nostri servizi.
             </p>
           </div>
         </div>
@@ -135,18 +142,17 @@ export default function ContattiPage() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-6">Come Raggiungermi</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">Come Contattarci</h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  Scegli il metodo di contatto che preferisci. Rispondo sempre entro 24 ore e la prima consulenza è
-                  sempre gratuita.
+                  Scegli il servizio di cui hai bisogno e utilizza i contatti dedicati. La rete CMT risponde sempre entro 24 ore.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {infoContatti.map((info, index) => {
                   const IconComponent = info.icon
-                  return (
-                    <Card key={index} className="p-4 hover:shadow-lg transition-shadow">
+                  const content = (
+                    <Card key={index} className="p-4 hover:shadow-lg transition-shadow h-full">
                       <CardContent className="space-y-3">
                         <div className="flex items-center gap-3">
                           <div className={`w-10 h-10 bg-${info.color}/10 rounded-lg flex items-center justify-center`}>
@@ -157,12 +163,22 @@ export default function ContattiPage() {
                           </div>
                         </div>
                         <div>
-                          <p className="font-medium text-foreground">{info.value}</p>
+                          {info.link ? (
+                            <a 
+                              href={info.link} 
+                              className="font-medium text-foreground hover:text-primary transition-colors block"
+                            >
+                              {info.value}
+                            </a>
+                          ) : (
+                            <p className="font-medium text-foreground">{info.value}</p>
+                          )}
                           <p className="text-sm text-muted-foreground">{info.description}</p>
                         </div>
                       </CardContent>
                     </Card>
                   )
+                  return content
                 })}
               </div>
 
@@ -190,84 +206,64 @@ export default function ContattiPage() {
         </div>
       </section>
 
-      {/* Schedule */}
+      {/* Network Info */}
       <section className="py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Opening Hours */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Orari di Apertura</h2>
-              <Card className="p-6">
-                <CardContent className="space-y-4">
-                  {orari.map((orario, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between py-2 border-b border-border last:border-b-0"
-                    >
-                      <div className="flex items-center gap-3">
-                        <Clock className="h-4 w-4 text-muted-foreground" />
-                        <span className="font-medium">{orario.giorno}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className={orario.disponibile ? "text-foreground" : "text-muted-foreground"}>
-                          {orario.orario}
-                        </span>
-                        {orario.disponibile && (
-                          <Badge variant="secondary" className="text-xs">
-                            Disponibile
-                          </Badge>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-4">La Rete CMT in Italia</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
+              Professionisti esperti in Control Mastery Theory distribuiti sul territorio nazionale
+            </p>
+          </div>
 
-              <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
-                <div className="flex items-start gap-3">
-                  <Calendar className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-primary mb-1">Prenotazione Flessibile</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Offro anche appuntamenti serali e nel weekend per venire incontro alle tue esigenze lavorative.
-                    </p>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="p-6">
+              <CardContent className="space-y-4 text-center">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
+                  <MapPin className="h-6 w-6 text-primary" />
                 </div>
+                <h3 className="font-semibold text-lg">Sedi in Tutta Italia</h3>
+                <p className="text-sm text-muted-foreground">
+                  Roma, Milano e altre città. Contattaci per trovare il professionista più vicino a te.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6">
+              <CardContent className="space-y-4 text-center">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
+                  <Clock className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-lg">Orari Flessibili</h3>
+                <p className="text-sm text-muted-foreground">
+                  Disponibilità anche serali e nel weekend per venire incontro alle tue esigenze.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6">
+              <CardContent className="space-y-4 text-center">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto">
+                  <MessageCircle className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-lg">Sedute Online</h3>
+                <p className="text-sm text-muted-foreground">
+                  Possibilità di seguire il percorso comodamente da casa con videoconsulenze sicure.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
+            <div className="flex items-start gap-4">
+              <Calendar className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-semibold text-primary mb-2">Come Funziona</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Dopo il primo contatto, ti assegneremo un professionista della rete che opera nella tua zona o che può seguirti online. 
+                  Organizzerete insieme orari e modalità degli incontri in base alle tue esigenze.
+                </p>
               </div>
-            </div>
-
-            {/* Location Map Placeholder */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Dove Trovarmi</h2>
-              <Card className="p-6">
-                <CardContent className="space-y-4">
-                  <div className="aspect-video bg-muted/50 rounded-lg flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
-                      <p className="text-muted-foreground">Mappa Interattiva</p>
-                      <p className="text-sm text-muted-foreground">Via Roma 123, 20121 Milano</p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <h4 className="font-semibold">Come Raggiungerci</h4>
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-primary" />
-                        <span>Metro: Linea M1 - Fermata Duomo (5 min a piedi)</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-primary" />
-                        <span>Autobus: Linee 54, 61 - Fermata Via Roma</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-primary" />
-                        <span>Parcheggio: Garage convenzionato a 50m</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>

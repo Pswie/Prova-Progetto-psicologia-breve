@@ -67,20 +67,42 @@ export default function Footer() {
           {/* Contact */}
           <div className="space-y-4">
             <h4 className="font-medium text-foreground">Contatti</h4>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:3405744646" className="hover:text-primary transition-colors">
-                  340 574 4646
-                </a>
+            <div className="space-y-4">
+              {/* Counselling */}
+              <div className="space-y-2">
+                <p className="text-xs font-semibold text-primary uppercase">Counselling</p>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <a href="tel:3405744646" className="hover:text-primary transition-colors">
+                    340 574 4646
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <Mail className="h-4 w-4 text-primary" />
+                  <a href="mailto:counselling@cmt-ig.org" className="hover:text-primary transition-colors">
+                    counselling@cmt-ig.org
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:counselling@cmt-ig.org" className="hover:text-primary transition-colors">
-                  counselling@cmt-ig.org
-                </a>
+
+              {/* Psicoterapia Breve */}
+              <div className="space-y-2">
+                <p className="text-xs font-semibold text-primary uppercase">Psicoterapia Breve</p>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <a href="tel:3292125385" className="hover:text-primary transition-colors">
+                    329 212 5385
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <Mail className="h-4 w-4 text-primary" />
+                  <a href="mailto:psicoterapiabreve.cmt@outlook.it" className="hover:text-primary transition-colors">
+                    psicoterapiabreve.cmt@outlook.it
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+
+              <div className="flex items-center gap-3 text-sm text-muted-foreground pt-2 border-t border-border/50">
                 <MapPin className="h-4 w-4 text-primary" />
                 <span>Roma, Milano e altre città italiane</span>
               </div>
