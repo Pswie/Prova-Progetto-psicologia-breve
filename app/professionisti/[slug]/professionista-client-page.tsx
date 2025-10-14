@@ -9,7 +9,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { notFound } from "next/navigation"
 import Script from "next/script"
-import ReactMarkdown from 'react-markdown' // <-- MODIFICA 1: Importa la libreria
+import ReactMarkdown from 'react-markdown'
 
 import type { Member } from "@/lib/tina/members"
 
@@ -89,11 +89,11 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
                   <span className="text-primary font-medium">{professionista.ruolo}</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">{nomeCompleto}</h1>
-
-                {/* <-- MODIFICA 2: Usa ReactMarkdown per la bio breve */}
-                <div className="prose prose-xl prose-invert text-muted-foreground mb-6">
-                    <ReactMarkdown>{professionista.bio || ""}</ReactMarkdown>
-                </div>
+                
+                {/* --- MODIFICA --- 
+                    Ho rimosso il blocco della bio breve da qui.
+                    Ora ci sono solo il titolo e le informazioni di contatto.
+                */}
 
                 <div className="space-y-3 mb-8">
                   {professionista.citta && (
@@ -157,7 +157,6 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
                   <Heart className="h-8 w-8 text-primary" />
                   Maggiori Informazioni
                 </h2>
-                {/* <-- MODIFICA 3: Usa ReactMarkdown per il corpo principale */}
                 <div className="prose prose-lg max-w-none prose-invert text-muted-foreground">
                   <ReactMarkdown>{professionista.body}</ReactMarkdown>
                 </div>
