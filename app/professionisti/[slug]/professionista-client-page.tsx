@@ -138,12 +138,9 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
           </div>
         </section>
 
-        {/* --- MODIFICA ---
-            Questa è ora la sezione dedicata alla Biografia.
-            Utilizza il contenuto del campo 'body' del tuo file markdown.
-        */}
-        {professionista.body && (
-          <section className="py-16">
+        {/* Biografia */}
+        {professionista.bio && (
+          <section className="py-16 bg-muted/30">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -155,9 +152,32 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
                   <Heart className="h-8 w-8 text-primary" />
                   Biografia
                 </h2>
-                {/* --- MODIFICA ---
-                    Ho rimosso 'prose-invert' per correggere il colore del testo.
-                */}
+                <Card className="border-none shadow-lg">
+                  <CardContent className="p-6">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      {professionista.bio}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* Servizi e Formazione */}
+        {professionista.body && (
+          <section className="py-16">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                  <Briefcase className="h-8 w-8 text-primary" />
+                  Servizi di Formazione
+                </h2>
                 <div className="prose prose-lg max-w-none text-muted-foreground">
                   <ReactMarkdown>{professionista.body}</ReactMarkdown>
                 </div>
