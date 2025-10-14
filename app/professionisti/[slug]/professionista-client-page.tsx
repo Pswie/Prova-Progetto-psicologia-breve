@@ -9,6 +9,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { notFound } from "next/navigation"
 import Script from "next/script"
+import ReactMarkdown from 'react-markdown' // <-- MODIFICA 1: Importa la libreria
 
 import type { Member } from "@/lib/tina/members"
 
@@ -23,7 +24,7 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
   }
 
   const nomeCompleto = `${professionista.nome} ${professionista.cognome}`
-  const specializzazioniArray = professionista.specializzazioni 
+  const specializzazioniArray = professionista.specializzazioni
     ? professionista.specializzazioni.split(',').map(s => s.trim())
     : []
 
@@ -88,7 +89,11 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
                   <span className="text-primary font-medium">{professionista.ruolo}</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">{nomeCompleto}</h1>
-                <p className="text-xl text-muted-foreground mb-6">{professionista.bio}</p>
+
+                {/* <-- MODIFICA 2: Usa ReactMarkdown per la bio breve */}
+                <div className="prose prose-xl prose-invert text-muted-foreground mb-6">
+                    <ReactMarkdown>{professionista.bio || ""}</ReactMarkdown>
+                </div>
 
                 <div className="space-y-3 mb-8">
                   {professionista.citta && (
@@ -138,8 +143,8 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
           </div>
         </section>
 
-        {/* Bio Section - Descrizione estesa dal body MDX */}
-        {professionista.body && professionista.body.trim() && (
+        {/* Bio Section - Descrizione estesa dal body */}
+        {professionista.body && (
           <section className="py-16">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
@@ -152,12 +157,9 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
                   <Heart className="h-8 w-8 text-primary" />
                   Maggiori Informazioni
                 </h2>
-                <div className="prose prose-lg max-w-none prose-invert">
-                  {professionista.body.split("\n\n").map((paragraph: string, index: number) => (
-                    <p key={index} className="text-muted-foreground mb-4">
-                      {paragraph}
-                    </p>
-                  ))}
+                {/* <-- MODIFICA 3: Usa ReactMarkdown per il corpo principale */}
+                <div className="prose prose-lg max-w-none prose-invert text-muted-foreground">
+                  <ReactMarkdown>{professionista.body}</ReactMarkdown>
                 </div>
               </motion.div>
             </div>
@@ -211,7 +213,7 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
                 Prenota un Consulto con {professionista.nome}
               </h2>
               <p className="text-lg text-muted-foreground mb-8 text-pretty">
-                {professionista.citta 
+                {professionista.citta
                   ? `Disponibile per consulenze in studio a ${professionista.citta} e online`
                   : 'Disponibile per consulenze online'
                 }
