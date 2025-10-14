@@ -89,11 +89,6 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
                   <span className="text-primary font-medium">{professionista.ruolo}</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">{nomeCompleto}</h1>
-                
-                {/* --- MODIFICA --- 
-                    Ho rimosso il blocco della bio breve da qui.
-                    Ora ci sono solo il titolo e le informazioni di contatto.
-                */}
 
                 <div className="space-y-3 mb-8">
                   {professionista.citta && (
@@ -143,7 +138,10 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
           </div>
         </section>
 
-        {/* Bio Section - Descrizione estesa dal body */}
+        {/* --- MODIFICA ---
+            Questa è ora la sezione dedicata alla Biografia.
+            Utilizza il contenuto del campo 'body' del tuo file markdown.
+        */}
         {professionista.body && (
           <section className="py-16">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -155,9 +153,12 @@ export default function ProfessionistaClientPage({ professionista, personSchema 
               >
                 <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                   <Heart className="h-8 w-8 text-primary" />
-                  Maggiori Informazioni
+                  Biografia
                 </h2>
-                <div className="prose prose-lg max-w-none prose-invert text-muted-foreground">
+                {/* --- MODIFICA ---
+                    Ho rimosso 'prose-invert' per correggere il colore del testo.
+                */}
+                <div className="prose prose-lg max-w-none text-muted-foreground">
                   <ReactMarkdown>{professionista.body}</ReactMarkdown>
                 </div>
               </motion.div>
