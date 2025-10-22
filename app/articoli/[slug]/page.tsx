@@ -53,7 +53,51 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     notFound()
   }
 
-  return <ArticleClientPage article={article} />
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt || article.bodyPlainText.substring(0, 160),
+    image: {
+      "@type": "ImageObject",
+      url: new URL(article.coverImage, BASE_URL).href,
+      width: 1200,
+      height: 630,
+    },
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      "@type": "Person",
+      name: article.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Psicoterapia Breve e Counselling CMT",
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("/Logo.png", BASE_URL).href,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": article.shareUrl,
+    },
+    articleSection: article.category,
+    wordCount: article.bodyPlainText.split(/\s+/).filter(Boolean).length,
+    inLanguage: "it-IT",
+    isAccessibleForFree: true,
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <ArticleClientPage article={article} />
+    </>
+  )
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
@@ -71,19 +115,34 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   return {
     title: `${article.title} | Psicoterapia Breve e Counselling CMT`,
     description: article.excerpt || article.bodyPlainText.substring(0, 160),
+    keywords: [
+      article.category,
+      "psicoterapia breve",
+      "counselling",
+      "CMT",
+      "Control Mastery Theory",
+      "psicologia",
+      article.author,
+    ],
+    authors: [{ name: article.author }],
     openGraph: {
       title: article.title,
       description: article.excerpt || article.bodyPlainText.substring(0, 160),
       url: article.shareUrl,
+      siteName: "Psicoterapia Breve e Counselling CMT",
+      locale: "it_IT",
       type: "article",
       publishedTime: article.date,
       authors: [article.author],
+      section: article.category,
+      tags: [article.category, "psicoterapia breve", "counselling", "CMT"],
       images: [
         {
           url: imageAbsolute,
           width: 1200,
           height: 630,
           alt: article.title,
+          type: "image/jpeg",
         },
       ],
     },
@@ -92,9 +151,22 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       title: article.title,
       description: article.excerpt || article.bodyPlainText.substring(0, 160),
       images: [imageAbsolute],
+      creator: "@CMTItalianGroup",
+      site: "@CMTItalianGroup",
     },
     alternates: {
       canonical: article.shareUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   }
 }

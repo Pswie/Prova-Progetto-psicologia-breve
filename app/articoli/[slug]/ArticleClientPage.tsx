@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
@@ -30,6 +31,8 @@ interface ArticleClientPageProps {
 }
 
 export default function ArticleClientPage({ article }: ArticleClientPageProps) {
+  const [shareSuccess, setShareSuccess] = useState(false)
+
   if (!article) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -43,35 +46,37 @@ export default function ArticleClientPage({ article }: ArticleClientPageProps) {
     )
   }
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: article.title,
-    description: article.excerpt || article.bodyPlainText.substring(0, 160),
-    image: article.coverImage,
-    datePublished: article.date,
-    author: {
-      "@type": "Person",
-      name: article.author,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Psicoterapia Breve e Counselling CMT",
-      logo: {
-        "@type": "ImageObject",
-        url: `${new URL("/placeholder-logo.png", article.shareUrl).href}`,
-      },
-    },
-    articleSection: article.category,
-    wordCount: article.bodyPlainText.split(/\s+/).filter(Boolean).length,
+  const handleShare = async () => {
+    // Se il browser supporta la Web Share API (mobile e alcuni desktop moderni)
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: article.title,
+          text: article.excerpt || article.bodyPlainText.substring(0, 140),
+          url: article.shareUrl,
+        })
+        setShareSuccess(true)
+        setTimeout(() => setShareSuccess(false), 2000)
+      } catch (err) {
+        // L'utente ha annullato la condivisione o c'è stato un errore
+        if ((err as Error).name !== 'AbortError') {
+          console.error('Errore durante la condivisione:', err)
+        }
+      }
+    } else {
+      // Fallback: copia il link negli appunti
+      try {
+        await navigator.clipboard.writeText(article.shareUrl)
+        setShareSuccess(true)
+        setTimeout(() => setShareSuccess(false), 2000)
+      } catch (err) {
+        console.error('Impossibile copiare il link:', err)
+      }
+    }
   }
 
   return (
     <div className="min-h-screen bg-background">
-      <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      </head>
-
       <Navigation />
 
       <motion.div
@@ -140,15 +145,20 @@ export default function ArticleClientPage({ article }: ArticleClientPageProps) {
               dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
             />
 
-            <div className="mt-12 pt-8 border-t border-border flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <span className="text-sm text-muted-foreground">Condividi questo articolo</span>
-                <div className="flex items-center gap-2 mt-2">
-                  <Button variant="outline" size="sm">
-                    <Share2 className="w-4 h-4 mr-2" />
-                    Condividi
-                  </Button>
-                </div>
+            <div className="mt-12 pt-8 border-t border-border">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                <span className="text-sm font-medium text-muted-foreground">
+                  Condividi questo articolo
+                </span>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={handleShare}
+                  className="w-full sm:w-auto"
+                >
+                  <Share2 className="w-4 h-4 mr-2" />
+                  {shareSuccess ? "✓ Condiviso!" : "Condividi"}
+                </Button>
               </div>
               <ShareButtons
                 title={article.title}
